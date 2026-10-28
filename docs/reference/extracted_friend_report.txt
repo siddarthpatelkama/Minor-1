@@ -1,0 +1,1327 @@
+--- PAGE 1 ---
+BATCHNO:MI1234
+PERSONALIZED LEARNING ROADMAP AND
+RESOURCES RECOMMENDATION SYSTEM
+Minor Project-I report submitted in partial fulfillment of the requirement for award
+of the degree of
+Bachelor of Technology in Computer Science & Engineering
+By
+M. HARINATH REDDY(24UECS0732)(VTU30524)
+M. HIMA TEJA(24UECS0737)(VTU29113)
+C. HIMATEJA(24UECS1447)(VTU28828)
+Under the guidance of
+Dr.RAVI.T, UG.,PG.,Ph.D, PROFESSOR
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+SCHOOL OF COMPUTING
+VEL TECH RANGARAJAN DR. SAGUNTHALA R&D INSTITUTE OF
+SCIENCE AND TECHNOLOGY
+(Deemed to be University)
+Accredited by NAAC with A++ Grade
+CHENNAI 600 062, TAMILNADU, INDIA
+NOV 2026
+
+--- PAGE 2 ---
+BATCHNO:MI1234
+PERSONALIZED LEARNING ROADMAP AND
+RESOURCES RECOMMENDATION SYSTEM
+Minor Project-I report submitted
+in partial fulfillment of the requirement for award of the degree of
+Bachelor of Technology
+in
+Computer Science & Engineering
+By
+M. HARINATH REDDY(24UECS0732)(VTU30524)
+M. HIMA TEJA(24UECS0737)(VTU29113)
+C. HIMATEJA(24UECS1447)(VTU28828)
+Under the guidance of
+Dr.RAVI.T,UG.,PG.,Ph.D,
+PROFESSOR
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+SCHOOL OF COMPUTING
+VEL TECH RANGARAJAN DR. SAGUNTHALA R&D INSTITUTE OF
+SCIENCE AND TECHNOLOGY
+(Deemed to be University Estd u/s 3 of UGC Act, 1956)
+Accredited by NAAC with A++ Grade
+CHENNAI 600 062, TAMILNADU, INDIA
+NOV 2026
+
+--- PAGE 3 ---
+CERTIFICATE
+It is certified that the work contained in the project report titled ”PERSONALIZED LEARNING
+ROADMAP AND RESOURCES RECOMMENDATION SYSTEM” by ”M. HARINATH REDDY
+(24UECS0732), M. HIMA TEJA (24UECS0737), C. HIMATEJA (24UECS1447)” has been carried
+out under my supervision and that this work has not been submitted elsewhere for a degree.
+Signature of Supervisor
+Dr.RA VI.T
+PROFESSOR
+Computer Science & Engineering
+School of Computing
+Vel Tech Rangarajan Dr. Sagunthala R&D
+Institute of Science and Technology
+Signature of Head / Assistant Head of the Department Signature of the Dean
+Dr. M. Kavitha / Dr. T. Kujani Dr. S P. Chokkalingam
+Professor & Head / Associate Professor &Assistant Head Professor & Dean
+Computer Science & Engineering School of Computing
+School of Computing Vel Tech Rangarajan Dr. Sagunthala R&D
+Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology
+Institute of Science and Technology
+3
+
+--- PAGE 4 ---
+DECLARATION
+We declare that this written submission represents our ideas in our own words and where others’
+ideas or words have been included, we have adequately cited and referenced the original sources. We
+also declare that we have adhered to all principles of academic honesty and integrity and have not
+misrepresented or fabricated or falsified any idea/data/fact/source in our submission. We understand
+that any violation of the above will be cause for disciplinary action by the Institute and can also
+evoke penal action from the sources which have thus not been properly cited or from whom proper
+permission has not been taken when needed.
+(Signature)
+M. HARINATH REDDY
+Date: / /
+(Signature)
+M. HIMA TEJA
+Date: / /
+(Signature)
+C. HIMATEJA
+Date: / /
+4
+
+--- PAGE 5 ---
+APPROV AL SHEET
+This project report entitled (PERSONALIZED LEARNING ROAD MAP RESOURCES RECOM-
+MENDATION SYSTEM) by (M. HARINATH REDDY) (24UECS0732), (M. HIMA TEJA) (24UECS0737),
+(C. HIMATEJA) (24UECS1447) is approved for the degree of B.Tech in Computer Science & Engi-
+neering.
+Examiners Supervisor
+Dr.RA VI.T ,UG.,PG.,Ph.D
+PROFESSOR,.
+Date: / /
+Place:
+5
+
+--- PAGE 6 ---
+ACKNOWLEDGEMENT
+We express our deepest gratitude to ourHonorable Founder Chancellor and President Col.
+Prof. Dr. R. RANGARAJAN B.E. (Electrical), B.E. (Mechanical), M.S (Automobile), D.Sc., and
+Foundress President Dr. R. SAGUNTHALA RANGARAJAN M.B.B.S. Vel Tech Rangarajan
+Dr. Sagunthala R&D Institute of Science and Technology,for their blessings.
+We express our sincere thanks to our respected Chairperson and Managing TrusteeDr.(Mrs).
+RANGARAJAN MAHALAKSHMI KISHORE,Vel Tech Rangarajan Dr. Sagunthala R&D In-
+stitute of Science and Technology,for her blessings.
+We are very much grateful to our belovedVice Chancellor Prof. Dr.RAJAT GUPTA,Ph.D.,for
+providing us with an environment to complete our project successfully.
+We record indebtedness to ourProfessor & Dean, School of Computing,
+Dr.SP.CHOKKALINGAM, M.Tech., Ph.D., Professor & Associate Dean, Dr.V .DHILIP
+KUMAR, M.E., Ph.D., Professor & Assistant Dean, Dr. R. PARTHASARATHY, M.E., Ph.D.,
+for their immense care and encouragement towards us throughout the course of this project.
+We are thankful to ourProfessor & Head, Department of Computer Science and Engineering,
+Dr. M. KA VITHA, M.E., Ph.D.,andAssociate Professor & Assistant Head, Dr. T. KUJANI,
+M.E., Ph.D.,for providing immense support in all our endeavors.
+We also take this opportunity to express a deep sense of gratitude to ourInternal Supervisor
+Supervisor name,degree.,(in capital letters)for his/her cordial support, valuable information and
+guidance, he/she helped us in completing this project through various stages.
+A special thanks to ourProject Coordinators Dr. SADISH SENDIL MURUGARAJ, M.E.,
+Ph.D., Professor, Dr. S.KARTHIYAYINI, M.E., Ph.D.,for their valuable guidance and support
+throughout the course of the project.
+We thank our department faculty, supporting staff and friends for their support and guidance to
+complete this project.
+M. HARINATH REDDY (24UECS0732)
+M. HIMA TEJA (24UECS0737)
+C. HIMATEJA (24UECS1447)
+6
+
+--- PAGE 7 ---
+ABSTRACT
+The Personalized Learning Roadmap and Resources Recommendation System is
+a web-based platform designed to help students plan and manage their learning ac-
+cording to their individual skills, interests, and career goals. The system collects
+student information and performs skill-gap analysis to identify existing skills and
+the skills required for the selected career path. Based on this analysis, it generates
+a personalized step-by-step learning roadmap and recommends relevant learning re-
+sources such as courses, videos, books, tutorials, documentation, and practice ma-
+terials. The system also provides career alignment by connecting learning activities
+with the skills required for the desired career role. A progress-tracking module al-
+lows students to monitor completed topics and remaining skills. By integrating these
+features into a single platform, the proposed system provides an organized and per-
+sonalized learning experience. In the future, AI-based recommendation techniques
+can be incorporated to make the roadmap more adaptive based on student perfor-
+mance and learning behavior.
+Keywords:
+Personalized Learning, Learning Roadmap, Resource Recommendation, Student
+Profiling, Skill-Gap Analysis, Career Alignment, Progress Tracking, Artificial Intel-
+ligence, Machine Learning, E-Learning.
+7
+
+--- PAGE 8 ---
+LIST OF FIGURES
+4.1Proposed System Architecture. . . . . . . . . . . . . . . . . . . 13
+4.2Data Flow Diagram. . . . . . . . . . . . . . . . . . . . . . . . . 14
+4.3Use Case Diagram. . . . . . . . . . . . . . . . . . . . . . . . . . 15
+4.4Class Diagram. . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+4.5Sequence Diagram. . . . . . . . . . . . . . . . . . . . . . . . . . 17
+4.6Collaboration diagram. . . . . . . . . . . . . . . . . . . . . . . 18
+4.7Activity Diagram. . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+5.1Test Image. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+6.1Graphical Representation. . . . . . . . . . . . . . . . . . . . . 31
+6.2Discussion. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+8
+
+--- PAGE 9 ---
+LIST OF TABLES
+6.1 Comparative Analysis . . . . . . . . . . . . . . . . . . . . . . . . . 30
+8.1 Mapping of Project to Complex Engineering Problem (CEP) – WP1
+to WP3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+8.2 Mapping of Project to Complex Engineering Activities (CEA) . . . 37
+8.3 SDG Mapping for the Project . . . . . . . . . . . . . . . . . . . . . 38
+9
+
+--- PAGE 10 ---
+LIST OF ACRONYMS AND
+ABBREVIATIONS
+•AI– Artificial Intelligence
+•ML– Machine Learning
+•UI– User Interface
+•UX– User Experience
+•DFD– Data Flow Diagram
+•UML– Unified Modeling Language
+•DB– Database
+•SQL– Structured Query Language
+•HTML– HyperText Markup Language
+•CSS– Cascading Style Sheets
+•JS– JavaScript
+•API– Application Programming Interface
+•NLP– Natural Language Processing
+•IDE– Integrated Development Environment
+•CRUD– Create, Read, Update, Delete
+10
+
+--- PAGE 11 ---
+TABLE OF CONTENTS
+Page.No
+ABSTRACT 7
+LIST OF FIGURES 8
+LIST OF TABLES 9
+LIST OF ACRONYMS AND ABBREVIATIONS 10
+1 INTRODUCTION 1
+1.1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+1.2 Background . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.3 Objective . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.4 Problem Statement . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2 LITERATURE REVIEW 5
+2.1 Existing System . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.2 Related Work . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.3 Research Gap . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3 PROJECT DESCRIPTION 7
+3.1 Existing System . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+3.2 Proposed System . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.3 Feasibility Study . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+3.3.1 Economic Feasibility . . . . . . . . . . . . . . . . . . . . . 9
+3.3.2 Technical Feasibility . . . . . . . . . . . . . . . . . . . . . 10
+3.3.3 Social Feasibility . . . . . . . . . . . . . . . . . . . . . . . 10
+3.4 System Specification . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3.4.1 Tools and Technologies Used . . . . . . . . . . . . . . . . 12
+3.4.2 Standards and Policies . . . . . . . . . . . . . . . . . . . . 12
+
+--- PAGE 12 ---
+4 SYSTEM DESIGN AND METHODOLOGY 13
+4.1 System Architecture . . . . . . . . . . . . . . . . . . . . . . . . . 13
+4.2 Design Phase . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+4.2.1 Data Flow Diagram . . . . . . . . . . . . . . . . . . . . . . 14
+4.2.2 Use Case Diagram . . . . . . . . . . . . . . . . . . . . . . 15
+4.2.3 Class Diagram . . . . . . . . . . . . . . . . . . . . . . . . 16
+4.2.4 Sequence Diagram . . . . . . . . . . . . . . . . . . . . . . 17
+4.2.5 Collaboration diagram . . . . . . . . . . . . . . . . . . . . 18
+4.2.6 Activity Diagram . . . . . . . . . . . . . . . . . . . . . . . 19
+4.3 Algorithm & Pseudo Code . . . . . . . . . . . . . . . . . . . . . . 20
+4.4 Algorithm . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+4.5 Pseudo Code . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+4.6 Module Description . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+4.6.1 Module1 . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+4.6.2 Module2 . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+4.6.3 Module3 . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+4.7 Steps to Execute / Run / Implement the Project . . . . . . . . . . . 23
+4.7.1 Step 1 – Setup and Configuration . . . . . . . . . . . . . . 23
+4.7.2 Step 2 – Development and Execution . . . . . . . . . . . . 23
+4.7.3 Step 3 – Testing and Deployment . . . . . . . . . . . . . . 23
+5 IMPLEMENTATION AND TESTING 24
+5.1 Input and Output . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+5.1.1 Input Design . . . . . . . . . . . . . . . . . . . . . . . . . 24
+5.1.2 Output Design . . . . . . . . . . . . . . . . . . . . . . . . 25
+5.2 Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+5.2.1 Testing Strategies . . . . . . . . . . . . . . . . . . . . . . . 25
+5.2.2 Performance Evaluation . . . . . . . . . . . . . . . . . . . 26
+6 RESULTS AND DISCUSSIONS 28
+6.1 Efficiency of the Proposed System . . . . . . . . . . . . . . . . . . 28
+6.2 Comparison of Existing and Proposed System . . . . . . . . . . . . 29
+6.2.1 Existing System . . . . . . . . . . . . . . . . . . . . . . . 29
+6.2.2 Proposed System . . . . . . . . . . . . . . . . . . . . . . . 29
+
+--- PAGE 13 ---
+6.2.3 Comparison . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+6.2.4 Discussion . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+6.3 Comparative Analysis-Table . . . . . . . . . . . . . . . . . . . . . 30
+6.4 Comparative Analysis-Graphical Representation and Discussion . . 31
+7 CONCLUSION AND FUTURE ENHANCEMENTS 32
+7.1 Summary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+7.2 Limitations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+7.3 Future Enhancements . . . . . . . . . . . . . . . . . . . . . . . . . 33
+8 ADDRESSING COMPLEX ENGINEERING PROBLEM AND SDG 34
+8.1 Mapping of the Project to Complex Engineering Problem (CEP) . . 35
+8.2 Mapping of the Project to Complex Engineering Activities (CEA) . 37
+8.3 SDG Mapping (CEP Section) . . . . . . . . . . . . . . . . . . . . . 38
+9 PLAGIARISM REPORT 39
+10 SOURCE CODE 40
+10.1 Source Code . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+10.1.1 Source Code . . . . . . . . . . . . . . . . . . . . . . . . . 40
+References 41
+
+--- PAGE 14 ---
+Chapter 1
+INTRODUCTION
+1.1 Introduction
+In today’s digital learning environment, students have access to a large number of
+online courses, videos, books, tutorials, and practice platforms. However, choosing
+the right resources and deciding what to learn, in what order, and according to which
+career goal can be difficult. Students with different skill levels and interests often
+follow the same learning paths, which may lead to confusion, unnecessary learning,
+and difficulty in identifying required skills.
+The Personalized Learning Roadmap and Resources Recommendation System is
+proposed to address these challenges by providing a learning path based on each
+student’s individual requirements. The system collects information such as existing
+skills, interests, strengths, weaknesses, learning preferences, and career goals. It then
+performs skill-gap analysis to identify the skills that need to be developed.
+Based on the identified skill gaps, the system generates a personalized step-by-
+step learning roadmap and recommends suitable resources such as courses, videos,
+books, tutorials, documentation, and practice materials. The system also aligns the
+roadmap with the student’s desired career path and provides progress tracking to
+monitor completed and pending learning activities.
+The proposed system integrates student profiling, skill-gap analysis, personal-
+ized roadmap generation, resource recommendation, career alignment, and progress
+tracking into a single platform. This approach aims to make the learning process
+more structured, flexible, and relevant to individual career objectives. In future de-
+velopment, AI and machine learning techniques can be incorporated to provide more
+adaptive recommendations based on student performance and learning behavior.
+1
+
+--- PAGE 15 ---
+1.2 Background
+The rapid growth of online education has provided students with access to a wide
+range of learning resources. Platforms such as online courses, video tutorials, e-
+books, documentation, and coding websites offer valuable opportunities for skill de-
+velopment. However, the large amount of available content can make it difficult
+for students to identify which skills to learn, which resources to use, and in what
+sequence they should learn them.
+Students have different educational backgrounds, skill levels, interests, learning
+abilities, and career goals. A common learning path may not be suitable for every
+student. Some students may spend time learning skills they already know, while
+others may miss important skills required for their desired career.
+The Personalized Learning Roadmap and Resources Recommendation System
+aims to address this issue by analyzing the student’s current profile and career objec-
+tives. It identifies skill gaps and generates a structured learning roadmap with rele-
+vant resources. The system also provides progress tracking to help students monitor
+their development.
+By bringing these functionalities together in a single platform, the proposed sys-
+tem can provide a more organized and personalized learning experience. The system
+can also be enhanced in the future using Artificial Intelligence and Machine Learn-
+ing to improve recommendations based on individual learning progress and perfor-
+mance.
+2
+
+--- PAGE 16 ---
+1.3 Objective
+The primary objective of the Personalized Learning Roadmap and Resources Recom-
+mendation System is to develop a platform that helps students create a structured and
+personalized learning path based on their current skills, interests, strengths, weak-
+nesses, and career goals. The system aims to identify the gap between the student’s
+existing knowledge and the skills required for their desired career. Based on this
+analysis, it generates a step-by-step learning roadmap that helps students understand
+what they should learn first, what they should learn next, and which skills are es-
+sential for achieving their career objectives. The system also aims to recommend
+suitable learning resources such as online courses, videos, books, tutorials, docu-
+mentation, and practice materials.
+Another important objective is to provide an integrated platform where students
+can manage their learning journey and monitor their progress in one place. The
+system aims to align recommended learning activities with specific career roles and
+provide progress tracking for completed and pending tasks. It also seeks to reduce
+confusion caused by the large amount of available online learning content by present-
+ing relevant resources in an organized manner. The proposed system can be further
+enhanced using Artificial Intelligence and Machine Learning techniques to provide
+adaptive recommendations based on student performance, learning behavior, and
+progress. Overall, the objective is to make learning more personalized, organized,
+career-oriented, and efficient.
+3
+
+--- PAGE 17 ---
+1.4 Problem Statement
+The rapid growth of online education has made a large number of learning resources
+available to students, including online courses, video lectures, books, tutorials, docu-
+mentation, and practice platforms. Although this availability provides more learning
+opportunities, it also creates a major problem: students often struggle to identify
+what they need to learn, where to start, which resources are relevant, and how to
+organize their learning according to their career goals. Most existing learning plat-
+forms provide general recommendations or predefined learning paths that may not
+consider an individual student’s current skills, interests, strengths, weaknesses, and
+career objectives. As a result, students may spend time learning unnecessary topics,
+miss important skills, or follow an unsuitable learning sequence.
+Another challenge is the lack of an integrated system that combines skill-gap iden-
+tification, personalized roadmap generation, resource recommendation, career align-
+ment, and progress tracking in one platform. Students often need to use multiple
+websites to find courses, track their progress, and understand the skills required for
+a particular career. This can make the learning process unorganized and difficult
+to manage. Therefore, there is a need for a system that analyzes a student’s existing
+skills and desired career path, identifies the required skill gaps, creates a personalized
+step-by-step learning roadmap, and recommends suitable learning resources. The
+proposed Personalized Learning Roadmap and Resources Recommendation System
+aims to address these problems by providing students with an organized and person-
+alized approach to achieving their learning and career objectives.
+4
+
+--- PAGE 18 ---
+Chapter 2
+LITERATURE REVIEW
+Existing studies on personalized learning systems focus on recommending educa-
+tional content based on students’ interests, skills, and learning behavior. Recom-
+mendation techniques such as content-based filtering and collaborative filtering are
+commonly used to suggest suitable courses, videos, and study materials.
+Research also highlights skill-gap analysis for identifying the difference between
+a student’s existing skills and the skills required for a specific career. AI and Machine
+Learning can further improve recommendations by considering student performance
+and learning progress.
+However, many existing systems focus mainly on resource recommendation and
+do not combine skill-gap analysis, personalized roadmaps, career alignment, re-
+source recommendation, and progress tracking in a single platform. The proposed
+system aims to integrate these features to provide students with a structured and per-
+sonalized learning experience.
+2.1 Existing System
+Currently, students use different online learning platforms such as YouTube, Cours-
+era, Udemy, and educational websites to learn new skills. These platforms provide
+a wide range of courses and learning materials, but the recommendations are gener-
+ally based on popularity, ratings, searches, or previously viewed content. They may
+not fully consider the student’s current skills, weaknesses, career goals, and required
+skill gaps.
+5
+
+--- PAGE 19 ---
+2.2 Related Work
+Existing e-learning systems provide courses and learning resources based on stu-
+dents’ interests and activities. Some recommendation systems use content-based
+filtering, collaborative filtering, AI, and Machine Learning to suggest suitable re-
+sources.
+Skill-gap analysis systems help identify missing skills for specific careers. How-
+ever, most existing systems do not combine skill analysis, personalized roadmaps,
+resource recommendations, career alignment, and progress tracking in one platform.
+The proposed system integrates these features to provide a complete personalized
+learning experience.
+2.3 Research Gap
+Existing learning platforms provide many educational resources, but they often do
+not provide a complete personalized learning path based on a student’s current skills
+and career goals. Most systems focus mainly on course or resource recommenda-
+tions and provide limited support for identifying skill gaps and organizing learning
+activities in the correct sequence.
+There is also a lack of a single integrated platform that combines student profil-
+ing, skill-gap analysis, personalized roadmap generation, resource recommendation,
+career alignment, and progress tracking. The proposed system addresses this gap
+by integrating these features into one platform, helping students follow a structured
+learning path according to their individual requirements and career objectives.
+6
+
+--- PAGE 20 ---
+Chapter 3
+PROJECT DESCRIPTION
+3.1 Existing System
+Currently, students depend on various online learning platforms and educational
+websites to develop their technical and professional skills. Platforms such as on-
+line course websites, video-learning platforms, coding websites, and digital libraries
+provide a large collection of courses, tutorials, videos, books, and practice materi-
+als. However, these platforms generally provide recommendations based on search
+history, popularity, ratings, or previously viewed content. They may not consider the
+student’s complete profile, including current skills, strengths, weaknesses, interests,
+preferred learning methods, and specific career goals. Students therefore need to
+manually search for suitable resources and decide which topics to learn and in what
+order.
+Another limitation is that existing systems usually do not integrate skill-gap anal-
+ysis, personalized roadmap generation, career alignment, resource recommendation,
+and progress tracking into a single platform. Students may use different applica-
+tions for learning resources, career guidance, and progress management. This can
+make the learning process difficult to organize and may result in students following
+unsuitable or repetitive learning paths.
+Disadvantages of existing methods:
+1. Limited personalization for individual students.
+2. No proper skill-gap analysis.
+3. Students need to create their own learning roadmap.
+4. Resources are scattered across different platforms.
+5. Limited career-based recommendations.
+6. Progress tracking is not integrated.
+7
+
+--- PAGE 21 ---
+3.2 Proposed System
+The proposed Personalized Learning Roadmap and Resources Recommendation
+System is designed to provide students with a structured and personalized learn-
+ing experience based on their individual skills, interests, strengths, weaknesses, and
+career goals. The system first collects the student’s profile information and identifies
+their existing skills. It then performs skill-gap analysis by comparing the student’s
+current skills with the skills required for the selected career path. Based on the iden-
+tified gaps, the system generates a step-by-step learning roadmap that guides the
+student from their current level towards their desired career goal.
+The system also recommends relevant courses, videos, books, tutorials, docu-
+mentation, and practice materials for each required skill. It connects the learning
+roadmap with the student’s career objective and provides a progress-tracking feature
+to monitor completed and pending activities. All these functions are integrated into
+a single platform, reducing the need to use multiple systems. In the future, AI and
+Machine Learning techniques can be incorporated to provide more adaptive recom-
+mendations based on student performance and learning behavior.
+Advantages of Proposed System
+1. Provides personalized learning paths.
+2. Identifies individual skill gaps.
+3. Recommends relevant learning resources.
+4. Aligns learning with career goals.
+5. Tracks student learning progress.
+6. Integrates multiple features into one platform.
+7. Can be enhanced with AI-based recommendations.
+8
+
+--- PAGE 22 ---
+3.3 Feasibility Study
+The Personalized Learning Roadmap and Resources Recommendation System is
+feasible to develop as a web-based minor project using commonly available tech-
+nologies and resources. From a technical feasibility perspective, the system can be
+developed using technologies such as HTML, CSS, JavaScript, Python, Flask, and
+MySQL. Student profiles, skills, career requirements, learning roadmaps, recom-
+mended resources, and progress information can be stored in a database. The recom-
+mendation process can initially use skill matching and rule-based techniques, while
+AI or Machine Learning can be added as a future enhancement. From an economic
+feasibility perspective, the project can be developed using open-source software and
+freely available development tools, reducing development costs. From an opera-
+tional feasibility perspective, the system provides a simple interface through which
+students can enter their skills and career goals, view their personalized roadmap, ac-
+cess recommended resources, and track their progress. The system does not require
+complex hardware and can run on commonly available computers with an internet
+connection. Therefore, the proposed system is technically, economically, and opera-
+tionally feasible for implementation as a minor project.
+3.3.1 Economic Feasibility
+The Personalized Learning Roadmap and Resources Recommendation System is
+economically feasible because it can be developed using mostly free and open-source
+technologies. The development team can use tools such as HTML, CSS, JavaScript,
+Python, Flask, and MySQL without requiring expensive software licenses. The sys-
+tem can be developed and tested on existing computers, which reduces the need
+for additional hardware investment. A local database can be used during develop-
+ment, avoiding the cost of purchasing a dedicated server. Similarly, freely available
+learning resources and publicly accessible educational content can be included in the
+recommendation database. Since the project is intended as a minor project, the ini-
+tial development and maintenance requirements are relatively low. If the system is
+deployed online, a low-cost hosting service can be used based on the number of users
+and storage requirements. The system can also reduce the effort required by students
+to search for suitable learning paths and resources by providing recommendations in
+one platform.
+9
+
+--- PAGE 23 ---
+3.3.2 Technical Feasibility
+The Personalized Learning Roadmap and Resources Recommendation System is
+technically feasible because it can be developed using commonly available software,
+programming languages, and database technologies. The system can use HTML,
+CSS, and JavaScript for developing the user interface and Python with Flask for im-
+plementing the backend logic. MySQL can be used to store student profiles, skills,
+career requirements, learning resources, roadmaps, and progress information. The
+skill-gap analysis can be implemented using predefined skill mappings and match-
+ing techniques to compare the student’s existing skills with the skills required for
+the selected career. A recommendation module can then suggest relevant learning
+resources based on the identified skill gaps. The roadmap generation module can ar-
+range the required skills in a logical learning sequence. The system can also provide
+a dashboard for viewing roadmaps and tracking completed activities. Since these
+technologies are widely available and can run on standard computers, no specialized
+hardware is required. AI and Machine Learning techniques can be integrated later
+to improve recommendation accuracy. Therefore, the proposed system is technically
+practical and suitable for implementation as a minor project.
+3.3.3 Social Feasibility
+The Personalized Learning Roadmap and Resources Recommendation System is so-
+cially feasible because it is designed to support students in making their learning
+process more organized, accessible, and career-oriented. Students often face diffi-
+culty in selecting suitable learning resources and deciding which skills they should
+develop for their desired career. The proposed system helps address these difficulties
+by providing a personalized roadmap based on the student’s existing skills, interests,
+and career goals. By presenting relevant learning resources and a clear sequence of
+topics, the system can reduce confusion and help students plan their learning more
+effectively. The progress-tracking feature also allows students to monitor their com-
+pleted activities and remaining learning tasks, which can encourage consistent learn-
+ing. The system can be accessed through a simple web interface and does not require
+specialized technical knowledge to use. It can support students from different skill
+levels by providing recommendations according to their individual requirements.
+10
+
+--- PAGE 24 ---
+3.4 System Specification
+Hardware Requirements:
+•Processor:Intel Core i5 / AMD Ryzen 5 or higher
+•RAM:Minimum 8 GB; 16 GB recommended
+•Storage:Minimum 256 GB SSD; 512 GB SSD recommended
+•Display:Full HD (1920×1080) or higher
+•Internet:Stable broadband/Wi-Fi connection
+•Graphics:Integrated graphics sufficient
+•Input Devices:Keyboard and mouse
+Software Requirements:
+•Operating System:Windows 11 / Ubuntu 22.04 or later
+•Frontend:HTML5, CSS3, JavaScript
+•Backend:Python 3.11 or later
+•Framework:Flask 3.x
+•Database:MySQL 8.0 or later
+•Development Environment:Visual Studio Code
+•Web Browser:Google Chrome / Microsoft Edge (latest version)
+•Version Control:Git and GitHub
+•API Testing:Postman
+•Optional AI/ML:Python libraries such as Scikit-learn, Pandas, and NumPy
+•Deployment:Render / Railway / similar cloud platform
+11
+
+--- PAGE 25 ---
+3.4.1 Tools and Technologies Used
+HTML – Web page structure.
+CSS – User interface design.
+JavaScript – Interactive features.
+Python – Backend development.
+Flask – Web application framework.
+MySQL – Database management.
+VS Code – Code development.
+Git GitHub – Version control.
+Pandas NumPy – Data processing.
+Scikit-learn – Recommendation and skill matching.
+Chrome – Testing the web application.
+3.4.2 Standards and Policies
+The Personalized Learning Roadmap and Resources Recommendation System fol-
+lows basic software, security, and data-management standards to ensure that the sys-
+tem is reliable, secure, and easy to use.
+Web Standards– Use HTML, CSS, and JavaScript standards.
+Data Privacy– Protect student information.
+Security– Secure user accounts and passwords.
+Database Standards– Store and manage data properly.
+Accessibility– Keep the system simple and user-friendly.
+Copyright Policy– Use learning resources legally.
+Testing Standards– Test the system for accuracy and performance.
+12
+
+--- PAGE 26 ---
+Chapter 4
+SYSTEM DESIGN AND METHODOLOGY
+4.1 System Architecture
+Figure 4.1:Proposed System Architecture
+Description
+The proposed system consists of four main parts: User Interface, Application
+Layer, Data Layer, and External Learning Resources. The User Interface allows
+students to enter their skills, interests, and career goals and view their personalized
+roadmap, recommended resources, and progress. The Application Layer performs
+student profiling, skill-gap analysis, roadmap generation, resource recommendation,
+career alignment, and progress tracking. The Data Layer stores student details, skills,
+career information, learning resources, and progress data. The system can also use
+external learning resources such as YouTube, Coursera, Udemy, books, documenta-
+tion, and coding platforms. Based on the student’s information, the system identifies
+missing skills, creates a personalized learning roadmap, and recommends suitable
+resources. The student’s progress is continuously updated to provide an organized
+and personalized learning experience.
+13
+
+--- PAGE 27 ---
+4.2 Design Phase
+The Design Phase defines how the Personalized Learning Roadmap and Resources
+Recommendation System will work. The system is designed with modules for stu-
+dent profiling, skill-gap analysis, personalized roadmap generation, resource rec-
+ommendation, career alignment, and progress tracking. Student details and learn-
+ing information are stored in a database, while the application processes the data to
+generate suitable learning paths and resources. The design focuses on providing a
+simple, user-friendly interface and an organized learning experience.
+4.2.1 Data Flow Diagram
+Figure 4.2:Data Flow Diagram
+Description
+The DFD shows how information moves through the system. The student provides
+profile details, skills, interests, and career goals. The system analyzes the skill gap
+and identifies the required skills. Based on this information, it creates a personal-
+ized learning roadmap and recommends suitable learning resources such as courses,
+videos, books, and tutorials. The system stores student, skill, career, resource, and
+14
+
+--- PAGE 28 ---
+progress data in the database. Finally, the progress tracking module records com-
+pleted activities and updates recommendations based on the student’s progress.
+4.2.2 Use Case Diagram
+Figure 4.3:Use Case Diagram
+Description
+The Use Case Diagram shows how the student interacts with the Personalized
+Learning Roadmap System. The student can register/login, manage their profile,
+view skill-gap analysis, get a personalized learning roadmap, view recommended
+resources, and track progress. The system analyzes the student’s skills and identi-
+fies the skills required for the selected career. It then generates a suitable learning
+roadmap and recommends resources such as courses, videos, books, and tutorials.
+The student can also update their progress, which helps the system provide up-
+dated recommendations. External learning platforms provide the required learning
+resources to the system.
+15
+
+--- PAGE 29 ---
+4.2.3 Class Diagram
+Figure 4.4:Class Diagram
+Description
+The Class Diagram shows the main classes and their relationships in the system.
+The Student class manages student details and interacts with the Profile class, which
+stores skills, interests, learning preferences, and career goals. The Skill and Skill-
+Gap classes identify existing and required skills. The Roadmap class generates and
+manages the student’s personalized learning path.
+The Resource class stores recommended learning materials such as courses,
+videos, books, and tutorials, while the ExternalPlatform class represents platforms
+that provide these resources. The Progress class records completed activities and
+learning progress. Together, these classes support student profiling, skill-gap analy-
+sis, roadmap generation, resource recommendation, and progress tracking.
+16
+
+--- PAGE 30 ---
+4.2.4 Sequence Diagram
+Figure 4.5:Sequence Diagram
+Description
+The Sequence Diagram shows the order of interactions between the student and
+the system. First, the student registers/logs in and provides profile details such as
+skills, interests, and career goals. The system performs skill-gap analysis to identify
+missing skills. Based on the results, it generates a personalized learning roadmap.
+Next, the system retrieves suitable learning resources such as courses, videos,
+books, and tutorials from the database and displays them to the student. The stu-
+dent then updates their learning progress, and the system stores the progress data.
+Based on the updated progress, the system can provide updated recommendations to
+support the student’s learning journey.
+17
+
+--- PAGE 31 ---
+4.2.5 Collaboration diagram
+Figure 4.6:Collaboration diagram
+Description
+The Collaboration Diagram shows how different components of the system com-
+municate with each other. The Student interacts with the System by logging in and
+providing profile details. The System sends the information to the Skill Analysis
+module to identify missing skills. The results are then passed to the Roadmap Gen-
+eration module to create a personalized learning path.
+The System also communicates with the Resource Recommendation module to
+obtain suitable courses, videos, books, and tutorials from the Resource Database.
+The Progress Tracking module records completed activities in the database. Based
+on the student’s progress, the system provides updated learning recommendations.
+Thus, the diagram shows the communication and data exchange between the student,
+18
+
+--- PAGE 32 ---
+system modules, and databases.
+4.2.6 Activity Diagram
+Figure 4.7:Activity Diagram
+Description
+The Activity Diagram shows the step-by-step flow of the system. First, the student
+registers/logs in and provides profile details such as skills, interests, and career goals.
+The system verifies the user and performs skill-gap analysis to identify missing skills.
+Next, the system generates a personalized learning roadmap and fetches suitable
+learning resources such as courses, videos, books, and tutorials. The student views
+the roadmap and recommended resources and updates their learning progress. The
+system stores the progress and generates updated recommendations based on the
+student’s progress, completing the learning cycle.
+19
+
+--- PAGE 33 ---
+4.3 Algorithm & Pseudo Code
+4.4 Algorithm
+1. Start the system.
+2. Display the login/registration page.
+3. Register or login the student.
+4. Collect student profile details.
+5. Collect existing skills and skill levels.
+6. Collect interests and learning preferences.
+7. Collect the desired career goal.
+8. Identify the skills required for the career.
+9. Compare existing skills with required skills.
+10. Identify the skill gaps.
+11. Prioritize the missing skills.
+12. Generate a personalized learning roadmap.
+13. Arrange skills in a suitable learning sequence.
+14. Find suitable resources for each skill.
+15. Recommend courses, videos, books, and tutorials.
+16. Display the roadmap and resources.
+17. Allow the student to complete learning activities.
+18. Track and update the student’s progress.
+19. Check the remaining skill gaps.
+20. Update the roadmap and recommendations.
+21. Store updated data in the database.
+22. Stop the system.
+20
+
+--- PAGE 34 ---
+4.5 Pseudo Code
+1.START
+2. Login/Register Student
+3. Get Student Details
+• Skills
+• Interests
+• Career Goal
+4. Get Required Skills for Career
+5. Compare Existing Skills with Required Skills
+6. Identify Skill Gaps
+7. Generate Personalized Learning Roadmap
+8. Recommend Learning Resources
+• Courses
+• Videos
+• Books
+• Tutorials
+9. Display Roadmap and Resources
+10. Track Student Progress
+11. Update Completed Skills
+12. Generate Updated Recommendations
+13. Store Data in Database
+14.STOP
+21
+
+--- PAGE 35 ---
+4.6 Module Description
+The system consists of several modules that work together to provide a personalized
+learning experience. The Student Profiling Module collects student details, skills,
+interests, strengths, weaknesses, and career goals. The Skill-Gap Analysis Module
+compares existing skills with the skills required for the selected career and identifies
+missing skills. The Personalized Roadmap Module creates a step-by-step learning
+path based on the identified skill gaps. The Resource Recommendation Module sug-
+gests suitable courses, videos, books, tutorials, and practice materials. The Career
+Alignment Module connects the learning roadmap with the student’s desired career.
+The Progress Tracking Module records completed and pending activities and mon-
+itors learning progress. Finally, the Database Module stores student, skill, career,
+resource, roadmap, and progress information.
+4.6.1 Module1
+Student Profiling
+The Student Profiling Module collects the student’s basic information, existing
+skills, interests, strengths, weaknesses, learning preferences, and career goals. This
+information is used as the initial input for creating a personalized learning plan.
+4.6.2 Module2
+Skill-Gap Analysis
+The Skill-Gap Analysis Module compares the student’s existing skills with the
+skills required for the selected career. It identifies the missing skills and determines
+the areas where the student needs improvement.
+4.6.3 Module3
+Personalized Roadmap
+The Personalized Roadmap Module uses the identified skill gaps and career goals
+to create a step-by-step learning path. It organizes the required skills in a suitable
+order and helps the student understand what to learn next.
+22
+
+--- PAGE 36 ---
+4.7 Steps to Execute / Run / Implement the Project
+4.7.1 Step 1 – Setup and Configuration
+• InstallPython, Flask, MySQL, and VS Code.
+• Create the project folder and required files.
+• Create the MySQL database and tables.
+• Install the required Python libraries.
+• Configure the database connection.
+4.7.2 Step 2 – Development and Execution
+• Develop the interface usingHTML, CSS, and JavaScript.
+• Implement the backend usingPython and Flask.
+• Add student profiling and skill-gap analysis.
+• Implement personalized roadmap generation.
+• Add resource recommendation and progress tracking.
+• Run the Flask server and open the system in a web browser.
+4.7.3 Step 3 – Testing and Deployment
+• Test student registration and profile management.
+• Test skill-gap analysis and roadmap generation.
+• Verify recommended learning resources.
+• Test progress tracking and database operations.
+• Fix errors and improve system performance.
+• Deploy the completed project on a suitable hosting platform.
+23
+
+--- PAGE 37 ---
+Chapter 5
+IMPLEMENTATION AND TESTING
+5.1 Input and Output
+The input and output design of thePersonalized Learning Roadmap and Resources
+Recommendation Systemdescribes how students provide information to the system
+and how the system presents the results. Students enter their profile details, existing
+skills, interests, and career goals. The system processes this information and displays
+a personalized learning roadmap, recommended resources, and learning progress.
+5.1.1 Input Design
+Input design focuses on collecting the information required to generate personalized
+learning recommendations. The system provides simple forms for students to enter
+their details accurately.
+The main inputs include:
+• Student name, email, and login details.
+• Existing skills and skill levels.
+• Interests and learning preferences.
+• Desired career goal.
+• Completed learning activities.
+• Student progress and feedback.
+The system validates the entered information before processing it and storing it in
+the database.
+24
+
+--- PAGE 38 ---
+5.1.2 Output Design
+Output design presents the processed information in a clear and understandable for-
+mat. The system displays results according to the student’s skills and career objec-
+tives.
+The main outputs include:
+• Student profile details.
+• Identified skill gaps.
+• Personalized learning roadmap.
+• Recommended courses, videos, books, and tutorials.
+• Career-related skill requirements.
+• Completed and pending learning activities.
+• Overall learning progress.
+These outputs help students understand their learning requirements and follow a
+structured path toward their career goals.
+5.2 Testing
+Testing is performed to verify that thePersonalized Learning Roadmap and Re-
+sources Recommendation Systemworks correctly. It checks whether each module
+produces the expected results and whether the modules work together properly. Test-
+ing also helps identify errors in student profiling, skill-gap analysis, roadmap gener-
+ation, resource recommendation, database operations, and progress tracking.
+5.2.1 Testing Strategies
+The following testing strategies can be used:
+•Unit Testing:Tests individual modules, such as student profiling and skill-gap
+analysis.
+•Integration Testing:Checks communication between roadmap generation, re-
+source recommendation, and the database.
+25
+
+--- PAGE 39 ---
+•Functional Testing:Verifies that all system features work according to the re-
+quirements.
+•Usability Testing:Checks whether students can use the system easily.
+•Validation Testing:Ensures that student inputs are valid and appropriate.
+•System Testing:Tests the complete application to verify its overall functional-
+ity.
+5.2.2 Performance Evaluation
+Performance evaluation measures the effectiveness and reliability of the proposed
+system. It checks whether the system processes student information correctly and
+generates suitable learning recommendations within a reasonable time.
+The evaluation focuses on:
+•Response Time:Measures the time required to generate a roadmap and recom-
+mendations.
+•Recommendation Relevance:Checks whether the recommended resources
+match the identified skill gaps.
+•Accuracy:Verifies whether the system correctly identifies missing skills.
+•Reliability:Ensures that the system works consistently without unexpected er-
+rors.
+•Usability:Evaluates how easily students can navigate the application.
+•Progress Tracking:Verifies that completed activities and learning progress are
+recorded correctly.
+The results of these evaluations can help identify areas for improvement and en-
+sure that the system provides a useful, organized, and personalized learning expe-
+rience. Actual performance values should be added after testing the implemented
+application.
+26
+
+--- PAGE 40 ---
+Figure 5.1:Test Image
+27
+
+--- PAGE 41 ---
+Chapter 6
+RESULTS AND DISCUSSIONS
+6.1 Efficiency of the Proposed System
+ThePersonalized Learning Roadmap and Resources Recommendation Systemis de-
+signed to improve the learning experience by identifying students’ skill gaps and
+recommending suitable learning resources. The system collects student informa-
+tion, including existing skills, interests, and career goals. Based on this information,
+it identifies the skills required for the selected career and generates a personalized
+learning roadmap. It also recommends relevant courses, videos, books, tutorials, and
+practice materials.
+The system integrates student profiling, skill-gap analysis, roadmap generation,
+career alignment, and progress tracking into a single platform. This helps students
+organize their learning activities and focus on the skills required to achieve their
+career objectives.
+The efficiency of the proposed system can be evaluated based on recommendation
+relevance, response time, skill-gap identification, and progress-tracking accuracy.
+Compared with manually searching for learning materials, the proposed system pro-
+vides an organized approach to selecting suitable resources and planning learning
+activities. The roadmap can be updated according to the student’s completed topics
+and remaining skills.
+The system can initially use rule-based skill matching to generate recommenda-
+tions, while Artificial Intelligence and Machine Learning algorithms can be incorpo-
+rated in the future to improve personalization. Actual efficiency and accuracy values
+should be measured through system testing using a suitable dataset. Overall, the
+proposed system aims to provide a simple, effective, and career-oriented learning
+experience.
+28
+
+--- PAGE 42 ---
+6.2 Comparison of Existing and Proposed System
+6.2.1 Existing System
+In the existing system, students depend on different online learning platforms to find
+courses, videos, tutorials, and other educational resources. These platforms provide a
+wide range of learning materials, but students often need to select resources manually
+and create their own learning plans.
+The recommendations may not fully consider the student’s current skills, missing
+skills, and specific career goals. Students may also need separate applications to
+manage their learning activities and monitor their progress. As a result, the learning
+process can become confusing and time-consuming.
+6.2.2 Proposed System
+The proposed system integrates student profiling, skill-gap analysis, personalized
+roadmap generation, resource recommendation, career alignment, and progress
+tracking into one platform. It compares the student’s existing skills with the skills
+required for the selected career and identifies areas for improvement.
+Based on the identified gaps, it generates a step-by-step learning roadmap and rec-
+ommends relevant learning resources. The progress-tracking module records com-
+pleted activities and helps update recommendations according to the student’s learn-
+ing progress. This approach provides a more organized and personalized learning
+experience than manually selecting resources from multiple platforms.
+6.2.3 Comparison
+The following table summarizes the comparison between the existing and proposed
+systems.
+Existing System Proposed System
+Students search for resources manually. Recommends relevant learning resources.
+Learning plans are created manually. Generates a personalized learning roadmap.
+Limited skill-gap identification. Identifies missing and required skills.
+Resources are spread across platforms. Combines recommendations in one platform.
+Progress tracking may be separate. Includes integrated progress tracking.
+Limited career-based personalization. Aligns learning with career goals.
+29
+
+--- PAGE 43 ---
+6.2.4 Discussion
+The proposed system offers a more structured way to plan learning and discover
+relevant resources. Its effectiveness depends on the quality of the skill informa-
+tion, career requirements, and resource database. Future improvements may include
+AI-based recommendations and performance-based personalization. Actual com-
+parative results should be reported after testing both approaches using consistent
+evaluation criteria.
+6.3 Comparative Analysis-Table
+Table 6.1: Comparative Analysis
+30
+
+--- PAGE 44 ---
+6.4 Comparative Analysis-Graphical Representation and Discussion
+Figure 6.1:Graphical Representation
+Figure 6.2:Discussion
+31
+
+--- PAGE 45 ---
+Chapter 7
+CONCLUSION AND FUTURE
+ENHANCEMENTS
+7.1 Summary
+ThePersonalized Learning Roadmap and Resources Recommendation Systemis de-
+signed to help students plan their learning according to their skills, interests, and
+career goals. The system collects student profile information and identifies the skills
+required for the selected career. By comparing existing skills with required skills, it
+identifies skill gaps and generates a step-by-step personalized learning roadmap.
+It also recommends suitable learning resources, including online courses, videos,
+books, tutorials, and practice materials. The system combines student profiling, skill-
+gap analysis, roadmap generation, career alignment, resource recommendation, and
+progress tracking into a single platform.
+The proposed system provides a structured approach to learning and helps stu-
+dents focus on the skills they need to improve. Students can view their learning
+roadmap, access recommended resources, and monitor completed and pending ac-
+tivities. Progress information can be used to update recommendations and guide
+students toward their career objectives.
+The system aims to reduce the time spent searching for learning materials and
+make the learning process more organized. Overall, the project provides a useful
+foundation for personalized learning and can be improved further by incorporating
+advanced recommendation techniques and additional learning features.
+7.2 Limitations
+The proposed system has some limitations that may affect the quality of its rec-
+ommendations. The accuracy of the learning roadmap depends on the information
+32
+
+--- PAGE 46 ---
+provided by students, such as their existing skills, interests, and career goals. If stu-
+dents enter incomplete or incorrect information, the system may generate unsuitable
+learning paths.
+Similarly, the quality of recommendations depends on the availability and accu-
+racy of the skill database, career information, and learning resources. If the database
+does not contain updated information, some recommended resources may be out-
+dated or less relevant to current industry requirements.
+Another limitation is that the initial version may use basic rule-based methods to
+identify skill gaps and recommend resources. Such methods may not fully under-
+stand individual learning difficulties, different learning speeds, or changes in career
+interests. The system may also depend on an internet connection to access online
+learning materials.
+In addition, it may not directly measure how well a student understands a topic
+simply by recording completed activities. The project may have limited integration
+with external learning platforms and may not automatically retrieve completion cer-
+tificates or assessment scores. These limitations can be addressed through better
+data management, improved recommendation methods, and additional personaliza-
+tion features.
+7.3 Future Enhancements
+In the future, thePersonalized Learning Roadmap and Resources Recommenda-
+tion Systemcan be enhanced by integrating Artificial Intelligence (AI) and Machine
+Learning (ML) techniques. These technologies can analyze student performance,
+learning preferences, and previous activities to provide more relevant recommenda-
+tions.
+An intelligent recommendation engine could suggest resources based on skill
+level, learning speed, and career requirements. The system could also use adaptive
+learning techniques to modify the roadmap whenever a student completes a topic,
+performs poorly in an assessment, or changes their career goal. This would make the
+learning process more flexible and personalized.
+Additional features can also be introduced to improve the usefulness of the sys-
+tem. Integration with platforms such as online course providers and coding practice
+websites could help students access learning materials more easily. An assessment
+33
+
+--- PAGE 47 ---
+module could evaluate student knowledge through quizzes, coding exercises, and
+skill tests.
+A dashboard with charts and progress reports could help students understand their
+achievements and remaining skill gaps. The system could also include notifications,
+learning reminders, project recommendations, and certificate tracking. In addition, a
+mobile-friendly interface could allow students to access their roadmaps from differ-
+ent devices.
+These enhancements would make the system more intelligent, accessible, and ef-
+fective in supporting students’ long-term learning and career development.
+34
+
+--- PAGE 48 ---
+Chapter 8
+ADDRESSING COMPLEX ENGINEERING
+PROBLEM AND SDG
+8.1 Mapping of the Project to Complex Engineering Problem (CEP)
+Table 8.1: Mapping of Project to Complex Engineering Problem (CEP) – WP1 to WP3
+WP Level Attribute Complex Engineering Problem
+Description
+Knowledge Pro-
+file
+Mapping with Project
+WP1 Depth of knowledge
+required
+Cannot be resolved without in-
+depth engineering knowledge at the
+intersection of multiple domains
+WK1, WK2,
+WK3, WK4,
+WK5, WK6,
+WK8
+The Personalized Learning Roadmap and
+Resources Recommendation System re-
+quires knowledge of database manage-
+ment, web application development, data
+modeling, recommendation methods, user-
+interface design, and career-skill mapping.
+It also requires an understanding of stu-
+dent learning behaviour and the ability to
+design a system that connects student pro-
+files, skill gaps, learning resources, and
+progress tracking.
+WP2 Range of conflicting
+requirements
+Involve wide-ranging and/or con-
+flicting technical and non-technical
+issues
+WK4, WK5,
+WK6, WK8
+The system must balance personalization
+with simplicity, detailed skill analysis with
+ease of use, and a large resource database
+with fast response time. It must also con-
+sider student privacy, accurate career re-
+quirements, resource relevance, and the
+different learning needs of students with
+varied skill levels.
+WP3 Depth of analysis re-
+quired
+Have no obvious solution and re-
+quire originality in analysis
+WK3, WK4,
+WK5, WK8
+There is no single standard method for gen-
+erating a personalized learning roadmap
+for every student. The system requires
+original analysis of student skills, career
+goals, and learning preferences to identify
+skill gaps, select suitable resources, and
+arrange learning activities in a logical se-
+quence.
+35
+
+--- PAGE 49 ---
+WP Level Attribute Complex Engineering Problem
+Description
+Knowledge Pro-
+file
+Mapping with Project
+WP4 Familiarity of issues Involve infrequently encountered or
+novel problems
+WK4, WK8 The integration of student profiling, career-
+based skill-gap analysis, dynamic roadmap
+generation, resource recommendation, and
+progress-based roadmap updating in a
+single platform is a relatively special-
+ized problem. It goes beyond a nor-
+mal course-recommendation system be-
+cause the roadmap must change according
+to each student’s progress and career ob-
+jective.
+WP5 Extent of applicable
+codes
+Address problems not encompassed
+by standards and codes of practice
+WK6, WK8 There are no fixed standards that fully de-
+fine how learning roadmaps should be gen-
+erated for different careers or how learning
+resources should be ranked for individual
+students. Therefore, engineering judgment
+is required to design skill-matching rules,
+roadmap structures, recommendation crite-
+ria, and progress-update methods.
+WP6 Stakeholder involve-
+ment and conflicting
+requirements
+Involve collaboration across disci-
+plines and diverse stakeholders
+WK5, WK6,
+WK7
+The system involves students, teachers or
+mentors, administrators, and potentially
+employers or training providers. Students
+require simple guidance and relevant re-
+sources, while administrators require ac-
+curate skill and career data. The system
+addresses these needs through clear pro-
+files, structured roadmaps, and progress-
+tracking features.
+WP7 Interdependence Address high-level problems re-
+quiring a systems approach
+WK3, WK5,
+WK6
+The platform consists of interdependent
+modules including student profiling, skill-
+gap analysis, roadmap generation, re-
+source recommendation, career alignment,
+database management, and progress track-
+ing. A change in a student’s skills, career
+goal, or completed activity affects the gen-
+erated roadmap and recommendations, so
+the system must be designed using a holis-
+tic approach.
+36
+
+--- PAGE 50 ---
+8.2 Mapping of the Project to Complex Engineering Activities (CEA)
+EA No. Attribute Characteristics Justification based on the Project
+EA1 Range of Resources Diverse resources and tech-
+nologies
+The project uses student profile data, career
+and skill databases, learning-resource infor-
+mation, web technologies, database manage-
+ment systems, and human roles such as stu-
+dents, administrators, and mentors. It also re-
+quires structured content from online courses,
+videos, books, tutorials, and practice materi-
+als.
+EA2 Level of Interactions Optimization of complex in-
+teractions
+It manages interactions between student pro-
+filing, skill-gap analysis, roadmap generation,
+resource recommendation, career alignment,
+database operations, and progress tracking.
+The system must update recommendations and
+learning paths whenever a student completes
+an activity or changes a career goal.
+EA3 Innovation Creative and research-based
+solutions
+The project applies a personalized approach
+by combining career-based skill-gap identifi-
+cation, step-by-step roadmap generation, and
+resource recommendation in one platform. Fu-
+ture enhancements can include AI and ma-
+chine learning methods to improve recommen-
+dation accuracy and adaptive learning.
+EA4 Consequences to So-
+ciety and Environ-
+ment
+Significant societal impact The system supports quality education by
+helping students identify skill gaps and ac-
+cess suitable learning resources. It can im-
+prove employability, reduce unequal access to
+organized learning guidance, and help students
+prepare for career opportunities in a structured
+manner.
+EA5 Familiarity Extends beyond prior expe-
+rience
+The project extends beyond a basic course-
+recommendation application by integrating
+student skills, career requirements, personal-
+ized roadmaps, and progress-based updates.
+Designing an effective skill-matching and
+roadmap-generation process requires knowl-
+edge beyond routine web application.
+Table 8.2: Mapping of Project to Complex Engineering Activities (CEA)
+37
+
+--- PAGE 51 ---
+8.3 SDG Mapping (CEP Section)
+SDG No. SDG Title Relevance to the Project
+SDG 4 Quality Education Supports personalized learning by identifying student skill gaps
+and recommending suitable courses, videos, books, tutorials,
+and practice materials.
+SDG 8 Decent Work and Economic
+Growth
+Helps students develop career-related skills and improve
+their employability through structured, career-oriented learning
+roadmaps.
+SDG 9 Industry, Innovation and In-
+frastructure
+Uses web technology, database systems, and recommendation
+methods to create an innovative digital platform for skill devel-
+opment and lifelong learning.
+SDG 10 Reduced Inequalities Provides organized learning guidance and resource recommen-
+dations for students with different skill levels, interests, and ca-
+reer goals.
+Table 8.3: SDG Mapping for the Project
+38
+
+--- PAGE 52 ---
+Chapter 9
+PLAGIARISM REPORT
+39
+
+--- PAGE 53 ---
+Chapter 10
+SOURCE CODE
+10.1 Source Code
+10.1.1 Source Code
+import express from ’express’;
+import { fileURLToPath } from ’url’;
+import path from ’path’;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const app = express();
+const PORT = process.env.PORT || 3000;
+app.use(express.json());
+// Serve static frontend files from build directory
+app.use(express.static(path.join(__dirname, ’dist’)));
+// API health check
+app.get(’/api/health’, (req, res) => {
+res.json({ status: ’ok’, timestamp: new Date().toISOString()
+40
+
+--- PAGE 54 ---
+});
+});
+// Fallback to index.html for Single Page Application client
+routing
+app.get(’*’, (req, res) => {
+res.sendFile(path.join(__dirname, ’dist’, ’index.html’));
+});
+app.listen(PORT, () => {
+console.log(‘Server is running on port ${PORT}‘);
+});
+export default app;
+41
+
+--- PAGE 55 ---
+References
+[1] P. Brusilovsky, “Adaptive Hypermedia,”User Modeling and User-Adapted Inter-
+action, vol. 11, pp. 87–110, 2001.
+[2] P. Brusilovsky and E. Mill´an, “User Models for Adaptive Hypermedia and Adap-
+tive Educational Systems,” inThe Adaptive Web, Lecture Notes in Computer
+Science, vol. 4321, Springer, pp. 3–53, 2007.
+[3] G. Siemens, “Connectivism: A Learning Theory for the Digital Age,”Interna-
+tional Journal of Instructional Technology and Distance Learning, vol. 2, no. 1,
+2005.
+[4] R. S. Baker and K. Yacef, “The State of Educational Data Mining in 2009: A
+Review and Future Visions,”Journal of Educational Data Mining, vol. 1, no. 1,
+pp. 3–17, 2009.
+[5] C. Romero and S. Ventura, “Educational Data Mining: A Review of the State of
+the Art,”IEEE Transactions on Systems, Man, and Cybernetics, Part C: Appli-
+cations and Reviews, vol. 40, no. 6, pp. 601–618, 2010.
+[6] M. J. Kearns and U. V . Vazirani,An Introduction to Computational Learning
+Theory. Cambridge, MA, USA: MIT Press, 1994.
+[7] F. Ricci, L. Rokach, and B. Shapira,Recommender Systems Handbook. New
+York, NY , USA: Springer, pp. 1–35, 2015.
+42
+

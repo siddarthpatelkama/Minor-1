@@ -1,0 +1,813 @@
+
+                                                                       
+\documentclass[10pt]{report}
+\usepackage{blindtext}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{sectsty}
+\usepackage{float}
+\usepackage{array}
+\usepackage[backend=biber,bibencoding=latin1]{biblatex}
+\chapterfont{\centering}
+\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{ragged2e}
+\usepackage{pdfpages} 
+\usepackage{draftwatermark}
+
+\usepackage[headheight=0pt,headsep=0pt]{geometry}
+
+\usepackage{xcolor}
+\definecolor{mybrown}{RGB}{131, 96, 65}
+
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\makeatletter
+\def\@makechapterhead#1{%
+  {\parindent \z@ \centering\normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \huge\bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 20\p@
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+\def\@makeschapterhead#1{%
+  {\parindent \z@ \centering
+    \normalfont
+    \interlinepenalty\@M
+    \Huge \bfseries  #1\par\nobreak
+    \vskip 40\p@
+  }}
+\makeatother
+
+\lstset{ %
+ language=Java,
+ basicstyle=\footnotesize,
+ numbers=left,
+ numberstyle=\tiny\color{gray},
+ stepnumber=1,
+ numbersep=5pt,
+ backgroundcolor=\color{white},
+ showspaces=false,
+ showstringspaces=false,
+ showtabs=false,
+ frame=single,
+ rulecolor=\color{black},
+ tabsize=2,
+ captionpos=b,
+ breaklines=true,
+ breakatwhitespace=false,
+ title=\lstname,
+ keywordstyle=\color{blue},
+ commentstyle=\color{gray},
+ stringstyle=\color{mauve},
+ escapeinside={\%*}{*)},
+ morekeywords={*,...}
+}
+
+\geometry{a4paper,total={180mm,250mm},left=20mm,top=20mm, right=20mm}
+
+\begin{document}
+
+
+\pagecolor{mybrown}
+\color{white}
+
+\newpage
+\begin{center}
+\hspace{10cm}
+\LARGE{\textsc {\textbf{\textcolor{white}{Batch No:MI2001}}}}\\[0.2cm]
+
+\thispagestyle{empty}
+\LARGE{\textsc {\textbf{\textcolor{white}{PROJECT TITLE}}}}\\[0.2cm]
+
+\vspace{0.2cm}
+\Large{\textit{\textcolor{white}{Minor Project-I  report submitted in partial fulfillment of the requirement for award of the degree of}}}\\[0.3cm]
+
+\Large{\textbf{\textcolor{white}{Bachelor of Technology in Computer Science \& Engineering}}}
+
+\vspace{0.5cm}
+\Large{\textbf{\textcolor{white}{By}}}\\[0.5cm]
+
+\begin{table}[h]
+\centering
+
+
+\Large{\textcolor{white}{
+\begin{tabular}{>{\bfseries}lc>{\bfseries}r}
+STUDENT NAME 1&(REGISTER NO) & (VTU NO)\\
+STUDENT NAME 2 & (REGISTER NO)&(VTU NO)\\
+STUDENT NAME 3&(REGISTER NO) & (VTU NO)\\
+\end{tabular}}}
+\end{table}
+
+\vspace{0.5cm}
+\large{\textit{\textcolor{white}{Under the guidance of}}}\\
+\large{\textit{\textcolor{white}{SUPERVISOR NAME, Degree., ASSISTANT PROFESSOR}}}\\
+
+\vspace{0.5cm}
+\includegraphics[scale=0.5]{Vel tech-Logo.png}\\
+
+\vspace{1cm}
+\large{\textbf{\textcolor{white}{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}}}\\
+\large{\textbf{\textcolor{white}{SCHOOL OF COMPUTING}}}\\
+
+\vspace{0.5cm}
+\Large{\textbf{\textcolor{white}{VEL TECH RANGARAJAN DR. SAGUNTHALA R\&D INSTITUTE OF SCIENCE AND TECHNOLOGY}}}\\
+
+\Large{\textbf{\textcolor{white}{(Deemed to be University)}}}\\
+\Large{\textbf{\textcolor{white}{Accredited by NAAC with A++ Grade}}}\\
+\large{\textbf{\textcolor{white}{CHENNAI 600 062, TAMILNADU, INDIA}}}
+
+\vspace{0.4cm}
+\large{\textbf{\textcolor{white}{NOV 2026}}}
+
+\end{center}
+
+
+\newpage
+\nopagecolor
+\color{black}
+
+
+\newpage
+\begin{center}
+\hspace{10cm}
+\LARGE{\textsc {\textbf{\textcolor{blue}{Batch No:MI2001}}}}\\[0.2cm]
+\thispagestyle{empty}
+\LARGE{\textsc {\textbf{\textcolor{blue}{PROJECT TITLE}}}}\\[0.2cm]
+\vspace{0.2cm}
+\Large{\textit{\textcolor{blue}{\\Minor Project-I  report submitted \\in partial fulfillment of the
+requirement
+for award of the degree of}}}\\[0.3cm]
+\Large{\textbf{\textcolor{blue}{\\Bachelor of Technology\\in \\Computer Science \& Engineering}}}
+\vspace{0.5cm}
+\Large{\textbf{\textcolor{blue}{\\By}}}\\[0.5cm]
+\begin{table}[h]
+\centering
+\Large{\textcolor{blue}{
+\begin{tabular}{>{\bfseries}lc>{\bfseries}r}
+STUDENT NAME 1&(REGISTER NO) & (VTU NO)\\STUDENT NAME 2 & (REGISTER NO)&(VTU NO)\\STUDENT NAME 3&(REGISTER NO) & (VTU NO)\\
+\end{tabular}}}
+\end{table}
+\vspace{0.5cm}
+\large{\textit{\textcolor{blue}{Under the guidance of}}}\\
+\large{\textit{\textcolor{blue}{SUPERVISOR NAME,Degree.,\\
+ASSISTANT PROFESSOR}
+}}\\
+\vspace{0.5cm}
+\includegraphics[scale=0.5]{Vel tech-Logo.png}\\
+\vspace{1cm}
+\large{\textbf{\textcolor{blue}{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}}}\\
+
+\large{\textbf{\textcolor{blue}{SCHOOL OF COMPUTING}}}\\
+\vspace{0.5cm}
+\Large{\textbf{\textcolor{blue}{VEL TECH RANGARAJAN DR. SAGUNTHALA R\&D INSTITUTE OF
+SCIENCE AND TECHNOLOGY\\
+\vspace{0.2cm}
+(Deemed to be University Estd u/s 3 of UGC Act,
+1956)}}}\\\Large{\textbf{\textcolor{blue}{Accredited by NAAC with A++ Grade}}}\\
+\large{\textbf{\textcolor{blue}{CHENNAI 600 062, TAMILNADU, INDIA}}}
+\vspace{0.4cm}
+\large{\textbf{\textcolor{blue}{\\NOV 2026}}}\\
+\end{center}
+
+%CERTIFICATE
+\newgeometry{left=20mm,top=20mm, right=20mm} 
+\begin{center}
+{\Huge \textbf{CERTIFICATE}}\\[1cm]
+\end{center}
+\linespread{1.5}
+\large{It is certified that the work contained in the project report titled "PROJECT-TITLE (IN CAPITAL
+LETTER)" by "STUDENT NAME1 & (REGISTER NO), STUDENT NAME2 & (REGISTER NO), STUDENT NAME3 & (REGISTER NO)" has been carried out under my supervision and that this work has not
+been submitted elsewhere for a degree.}
+\vspace{1.5cm}
+\begin{flushright}
+\textbf{Signature of Supervisor\\Supervisor name\\Designation\\Computer Science \&
+Engineering\\School of Computing\\Vel Tech Rangarajan Dr. Sagunthala R\&D\\Institute of Science and
+Technology\\}\\[2.0cm]
+
+\end{flushright}
+\begin{flushleft}
+    
+
+\textbf{Signature of Head / Assistant Head of the Department\hfill\textbf{Signature of the Dean }\\\\Dr. M. Kavitha / Dr. T. Kujani\hfill\textbf{Dr. S P. Chokkalingam
+} \\Professor \& Head / Associate Professor \&Assistant Head \hfill\textbf{Professor \& Dean}\\Computer
+Science \& Engineering\hfill\textbf{School of Computing}\\{School of Computing}\hfill\textbf{Vel Tech Rangarajan Dr. Sagunthala R\&D}\\Vel Tech Rangarajan Dr. Sagunthala R\&D\hfill\textbf{Institute of
+Science and Technology}\\{Institute of
+Science and Technology}\hfill\textbf{}\\}\\\textbf{{}}\hfill\textbf{}\\\\
+\end{flushleft}
+
+
+%declaration
+\newpage
+\begin{center}
+\Huge \textbf{DECLARATION}
+\end{center}
+\vspace{1.0cm}
+\linespread{1.5}
+\large{
+We declare that this written submission represents our ideas in our own words and where others' ideas
+or words have been included, we have adequately cited and referenced the original sources. We also
+declare that we have adhered to all principles of academic honesty and integrity and have not
+misrepresented or fabricated or falsified any idea/data/fact/source in our submission. We understand
+that any violation of the above will be cause for disciplinary action by the Institute and can also evoke
+penal action from the sources which have thus not been properly cited or from whom proper permission
+has not been taken when needed.}
+\vspace{2.0cm}
+\begin{flushright}
+(Signature)\\
+\large{(STUDENT NAME1(IN CAPITAL LETTER)}\\
+\large{Date:\hspace*{1.0cm}/\hspace*{1.0cm}/}\\[2.0cm]
+(Signature)\\
+\large{(STUDENT NAME2(IN CAPITAL LETTER)}\\
+\large{Date:\hspace*{1.0cm}/\hspace*{1.0cm}/}\\[2.0cm]
+(Signature)\\
+\large{(STUDENT NAME3(IN CAPITAL LETTER)}\\
+\large{Date:\hspace*{1.0cm}/\hspace*{1.0cm}/}\\[2.0cm]
+\end{flushright}
+\newpage
+%approval sheet
+\newpage
+\begin{center}
+\Huge\textbf{APPROVAL SHEET}\\
+\vspace{1.0cm}
+\end{center}
+\linespread{1.5}
+\justifying{
+\large{This project report entitled (PROJECT TITLE (IN CAPITAL LETTERS)) by (STUDENT NAME1
+(REGISTER NO), (STUDENT NAME2 (REGISTER NO), (STUDENT NAME3 (REGISTER NO) is approved for the
+degree of B.Tech in Computer Science \& Engineering.}\\}
+\vspace{4.0cm}
+\begin{flushleft}
+\Large \textbf{Examiners} \hfill \Large \textbf{Supervisor}\\
+\end{flushleft}
+\begin{flushright}
+Supervisor name,Degree \\
+Designation,.
+\end{flushright}
+\vspace{1.0cm}
+\begin{flushleft}
+\large{\textbf{Date:\hspace*{1.0cm}/\hspace*{2.0cm}/}}\\
+\large{\textbf{Place:}}
+\end{flushleft}
+%acknowledgment
+\newpage
+\begin{center}
+\LARGE{\textbf{ACKNOWLEDGEMENT}}\\[1cm]
+\end{center}
+\linespread{1.13}
+\begin{sloppypar}
+
+\large{\paragraph{}We express our deepest gratitude to our \textbf{Honorable Founder Chancellor and President
+Col. Prof. Dr. R. RANGARAJAN B.E. (Electrical), B.E. (Mechanical), M.S
+(Automobile), D.Sc., and Foundress President Dr. R. SAGUNTHALA RANGARAJAN
+M.B.B.S. Vel Tech Rangarajan Dr. Sagunthala
+R\&D Institute of Science and Technology,} for their blessings.
+\large{\paragraph{}We express our sincere thanks to our respected Chairperson and Managing Trustee \textbf{Dr.(Mrs).
+RANGARAJAN MAHALAKSHMI KISHORE,Vel Tech Rangarajan Dr. Sagunthala
+R\&D Institute of Science and Technology,} for her blessings. 
+
+\large{\paragraph{}We are very much grateful to our beloved \textbf{Vice Chancellor Prof. Dr.RAJAT
+GUPTA,Ph.D.,} for providing us with an environment to complete our project successfully.}
+\large{\paragraph{}We record indebtedness to our \textbf{Professor \& Dean, School of Computing, Dr.SP.CHOKKALINGAM, M.Tech., Ph.D., Professor \& Associate Dean,  Dr.V.DHILIP KUMAR, M.E., Ph.D., Professor \& Assistant Dean, Dr. R. PARTHASARATHY, M.E., Ph.D., }  for their immense care and encouragement
+towards us throughout the course of this project.}
+
+\large{\paragraph{}We are thankful to our \textbf{Professor \& Head, Department of Computer Science and Engineering, Dr. M. KAVITHA, M.E., Ph.D., }and \textbf{Associate Professor \& Assistant Head, Dr. T. KUJANI, M.E., Ph.D.,} for providing immense support in all our endeavors.
+\large{\paragraph{}We also take this opportunity to express a deep sense of gratitude to our \textbf{Internal
+Supervisor Supervisor name,degree.,(in capital letters)} for his/her cordial support, valuable
+information and guidance, he/she helped us in completing this project through various stages. }
+\large{\paragraph{}A special thanks to our \textbf{Project Coordinators DR.S.RAJAPRAKASH, M.E., Ph.D., Professor, Dr. S.KARTHIYAYINI, M.E., Ph.D., Associate Professor} for their valuable guidance and support throughout the course of the project.}
+
+\large{\paragraph{}We thank our department faculty, supporting staff and friends for their support and
+guidance to complete this project.}
+\begin{sloppypar}
+
+\vspace{2.0cm}
+\begin{flushright}
+\begin{tabular}{>{\bfseries}lc>{\bfseries}r}
+STUDENT NAME1 & & (REGISTER NO)\\STUDENT NAME2 & & (REGISTER NO)\\STUDENT NAME3 & &
+(REGISTER NO)\\
+\end{tabular}
+\end{flushright}
+%ABSTRACT
+\newpage
+\begin{center}
+\vspace{2cm}
+\Large{\textbf{ABSTRACT}}\\[0.5cm]
+\end{center}
+\begin{center}
+\addtocontents{toc}{~\hfill\textbf{Page.No}\par}
+\addcontentsline{toc}{chapter}{ABSTRACT}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\end{center}
+\vspace{-5em}
+\Large{\paragraph\\
+Artificial Neural Networks are a special type of machine learning algorithms that are modeled after the human brain. That is, just like how the neurons in our nervous system are able to learn from the past data, similarly, the ANN is able to learn from the data and provide responses in the form of predictions or classifications.
+ANNs are nonlinear statistical models which display a complex relationship between the inputs and outputs to discover a new pattern. A variety of tasks such as image recognition, speech recognition, machine translation as well as medical diagnosis makes use of these artificial neural networks.
+An important advantage of ANN is the fact that it learns from the example data sets. Most commonly usage of ANN is that of a random function approximation. With these types of tools, one can have a cost-effective method of arriving at the solutions that define the distribution. ANN is also capable of taking sample data rather than the entire dataset to provide the output result. With ANNs, one can enhance existing data analysis techniques owing to their advanced predictive capabilities.
+
+ }\\
+\vspace{0.5cm}
+\noindent \textbf{Keywords:}
+\textbf{}
+%list of figure
+\newpage
+\renewcommand*\listfigurename{LIST OF FIGURES}
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\listoffigures
+\newpage
+\renewcommand{\listtablename}{LIST OF TABLES}
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\listoftables
+%list of abbreviation
+\newpage
+\newlist{abbrv}{itemize}{1}
+\setlist[abbrv,1]{label=,labelwidth=1in,align=parleft,itemsep=0.1\baselineskip,leftmargin=!}
+\chapter*{LIST OF ACRONYMS AND ABBREVIATIONS}
+\chaptermark{LIST OF ACRONYMS AND ABBREVIATIONS}
+\addcontentsline{toc}{chapter}{LIST OF ACRONYMS AND ABBREVIATIONS}
+\begin{abbrv}
+\item[abbr] Abbreviation
+\end{abbrv}
+\newpage
+\renewcommand*\contentsname{TABLE OF CONTENTS}
+%\addtocontents{toc}{\textbf{CONTENT} \hfill \textbf{PAGE NO.}}
+\tableofcontents
+\addtocontents{toc}{\protect\pagestyle{empty}}
+\thispagestyle{empty}
+%introduction
+\chapter{INTRODUCTION}
+\pagenumbering{arabic}
+\section{Introduction}
+\hspace{0.5cm} 
+\textbf{SHOULD BE MINIMUM ONE PAGE}
+
+\linespread{1.5}
+\section{Background}
+\hspace{0.5cm}Morbi non felis blandit, gravida risus a, feugiat nibh. Sed ex purus, aliquam nec
+justo sed, congue efficitur metus. Maecenas ac nunc ut ex faucibus tempor ac dignissim elit. Sed eu consequat purus, tincidunt consequat ipsum. Quisque pulvinar
+maximus condimentum. Nunc bibendum mauris ac interdum tempus. Donec ut sollicitudin ex. Duis varius dolor mauris, sed dictum sem euismod consequat.
+\section{Objective}
+SHOULD BE MINIMUM TWO PARAGRAPHS -WITH MINIMUM 150 WORDS
+
+\section{Problem Statement}
+SHOULD BE MINIMUM TWO PARAGRAPHS -WITH MINIMUM 150 WORDS
+
+
+%literature review
+\chapter{LITERATURE REVIEW}
+[1] K. Hashi et al proposed a system to predict heart diseases. 
+In the healthcare industry, machine learning methods are routinely employed to forecast deadly
+illnesses. The goal of this study was to create and compare the performance of a standard system and a suggested system that predicts heart disease using the Logistic regression, K-nearest
+neighbour, Support vector machine, Decision tree, and Random Forest classification models.
+The suggested system aided in tuning the hyperparameters of the five specified classification
+algorithms utilising the grid search technique. The main study topic is the performance of the
+heart disease prediction system. It is possible to improve the performance of prediction models
+by using the hyperparameter tuning model.
+
+
+\section{Existing System}
+
+\section{Related Work}
+
+
+\section{Research Gap}
+
+\linespread{1.5}
+%PROJECT DESCRIPTION
+\chapter{PROJECT DESCRIPTION}
+\linespread{1.5}
+\section{Existing System}
+SHOULD BE MINIMUM TWO PARAGRAPHS -WITH MINIMUM 150 WORDS
+Mention disadvantages of existing system
+
+\section{Proposed System}
+SHOULD BE MINIMUM TWO PARAGRAPHS -WITH MINIMUM 150 WORDS
+Mention advantages of Proposed system
+
+\section{Feasibility Study}
+SHOULD BE MINIMUM ONE PARAGRAPHS -WITH MINIMUM 150 WORDS
+Should be described related to project only
+
+\subsection{Economic Feasibility}
+SHOULD BE MINIMUM ONE PARAGRAPHS -WITH MINIMUM 150 WORDS
+Should be described related to project only
+
+\subsection{Technical Feasibility}
+SHOULD BE MINIMUM ONE PARAGRAPHS -WITH MINIMUM 150 WORDS
+Should be described related to project only
+
+\subsection{Social Feasibility}
+SHOULD BE MINIMUM ONE PARAGRAPHS -WITH MINIMUM 150 WORDS
+Should be described related to project only
+
+\section{System Specification}
+Should be listed as bullet points by mentioning with recent specs
+
+\subsection{Tools and Technologies Used}
+
+\subsection{Standards and Policies}
+{Sample attached}\\
+\textbf{Anaconda Prompt}\\
+Anaconda prompt is a type of command line interface which explicitly deals
+with the ML( MachineLearning) modules.And navigator is available in all the Windows,Linux and MacOS.The anaconda prompt has many number of IDE’s which
+make the coding easier. The UI can also be implemented in python.\\
+\textbf{Standard Used: ISO/IEC 27001}\\
+\textbf{Jupyter}\\
+It’s like an open source web application that allows us to share and create the
+documents which contains the live code, equations, visualizations and narrative text.
+It can be used for data cleaning and transformation, numerical simulation, statistical
+modeling, data visualization, machine learning.\\
+\textbf{Standard Used: ISO/IEC 27001}
+
+
+
+\chapter{SYSTEM DESIGN AND METHODOLOGY}
+\linespread{1.5}
+\section{System Architecture}
+\begin{figure}[H]
+ \centering
+ \includegraphics[height= 7cm, width=15cm]{images/Capture1.JPG}
+ \caption{\textbf{Fig. Name}}
+\end{figure}
+Description
+( Describe your system Architecture)
+\section{Design Phase }
+\subsection{Data Flow Diagram}
+\begin{figure}[H]
+ \centering
+ \includegraphics[height= 10cm, width=15cm]{images/Capture3.JPG}
+ \caption{\textbf{Fig. Name}}
+\end{figure}
+
+Description 
+( Describe your data flow diagram)
+\subsection{Use Case Diagram}
+\begin{figure}[H]
+ \centering
+ \includegraphics[height= 10cm, width=12cm]{images/use case.jpg}
+ \caption{\textbf{Fig. Name}}
+\end{figure}
+Description 
+( Describe your Use Case diagram)
+\subsection{Class Diagram}
+\begin{figure}[H]
+ \centering
+ \includegraphics[height= 10cm, width=12cm]{images/class.jpg}
+ \caption{\textbf{Fig. Name}}
+\end{figure}
+Description 
+( Describe your Class diagram)
+\subsection{Sequence Diagram}
+\begin{figure}[H]
+ \centering
+ \includegraphics[height= 12cm, width=12cm]{images/Untitled Diagram (9).jpg}
+ \caption{\textbf{Fig. Name}}
+\end{figure}
+Description 
+( Describe your Sequence Diagram)
+\subsection{Collaboration diagram}
+\begin{figure}[H]
+ \centering
+ \includegraphics[height= 12cm, width=12cm]{images/Untitled Diagram (9).jpg}
+ \caption{\textbf{Fig. Name}}
+\end{figure}
+Description
+( Describe your Collaboration Diagram)
+
+
+\subsection{Activity Diagram}
+
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[height= 12cm, width=12cm]{images/Untitled Diagram (9).jpg}
+ \caption{\textbf{Fig. Name}}
+
+\end{figure}
+ Description 
+ ( Describe your Activity Diagram)
+\section{Algorithm \& Pseudo Code}
+\subsection{Algorithm}
+\subsection{Pseudo Code}
+
+%Description of Sequence Diagram
+\section{Module Description}
+\subsection{Module1}
+Describe module with Title
+
+\subsection{Module2}
+Describe module with Title
+
+\subsection{Module3}
+Describe module with Title
+
+\section{Steps to execute/run/implement the project}
+\subsection{Step1}
+Describe steps with title and mention steps in bullet points
+
+\subsection{Step2}
+Describe steps with title and mention steps in bullet points
+
+\subsection{Step3}
+Describe steps with title and mention steps in bullet points
+
+
+
+
+\chapter{IMPLEMENTATION AND TESTING}
+\linespread{1.5}
+\section{Input and Output}
+\subsection{Input Design}
+\subsection{Output Design}
+\section{Testing}
+\subsection{Testing Strategies}
+
+\subsection{Performance Evaluation}
+
+
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[height= 18cm, width=17cm]{images/s4.png}
+ \caption{\textbf{Test Image}}
+\end{figure}
+\chapter{RESULTS AND DISCUSSIONS}
+\linespread{1.5}
+\section{Efficiency of the Proposed System}
+{Sample attached}\\
+{ SHOULD BE MINIMUM TWO PARAGRAPHS -WITH MINIMUM 150 WORDS}
+
+The proposed system is based on the Random forest Algorithm that creates many
+decision trees. Accuracy of proposed system is done by using random forest gives
+the ouput approximately 76 to 78 percent. Random forest implements many decision
+trees and also gives the most accurate output when compared to the decision tree.
+Random Forest algorithm is used in the two phases. Firstly, the RF algorithm extracts
+subsamples from the original samples by using the bootstrap resampling method and
+creates the decision trees for each testing sample and then the algorithm classifies
+the decision trees and implements a vote with the help of the largest vote of the
+classification as a final result of the classification. The random Forest algorithm
+always includes some of the steps as follows:
+Selecting the training dataset:Using the bootstrap random sampling method we
+can derive the K training sets from the original dataset properties using the size of
+all training set the same as that of original training dataset.
+Building the random forest algorithm: Creating a classification regression tree
+each of the bootstrap training set will generate the K decision trees to form a random
+forest model, uses the trees that are not pruned. Looking at the growth of the tree,
+31
+this approach is not chosen the best feature as the internal nodes for the branches
+but rather the branching process is a random selection of all the trees gives the best
+features.
+
+
+\section{Comparison of Existing and Proposed System}
+{Sample attached}\\
+
+\textbf{Existing system:(Decision tree)}\\ In the Existing system, we implemented a decision tree algorithm that predicts whether to grant the loan or not. When using a
+decision tree model, it gives the training dataset the accuracy keeps improving with
+splits. We can easily overfit the dataset and doesn’t know when it crossed the line
+unless we are using the cross validation. The advantages of the decision tree are
+model is very easy to interpret we can know that the variables and the value of the
+variable is used to split the data. But the accuracy of decision tree in existing system
+gives less accurate output that is less when compared to proposed system.\\
+\textbf{Proposed system:(Random forest algorithm)}\\ Random forest algorithm generates more trees when compared to the decision tree and other algorithms. We can
+specify the number of trees we want in the forest and also we also can specify maximum of features to be used in the each of the tree. But, we cannot control the
+randomness of the forest in which the feature is a part of the algorithm. Accuracy
+keeps increasing as we increase the number of trees but it becomes static at one
+certain point. Unlike the decision tree it won’t create more biased and decreases
+variance. Proposed system is implemented using the Random forest algorithm so
+that the accuracy is more when compared to the existing system.
+
+\section{Comparative Analysis-Table}
+\begin{table}[H]
+\caption{Table Name}
+\vspace{0.5cm}
+\centering
+\includegraphics[scale=1.0]{1.jpg}
+\vspace{1cm}
+\end{table}
+
+
+\section{Comparative Analysis-Graphical Representation and Discussion}
+
+\begin{figure}[H]
+\vspace{0.5cm}
+\centering
+\includegraphics[scale=1.7]{2.jpg}\\
+
+\caption{\centering \textbf {Fig. Name}}
+\vspace{1cm}
+\end{figure}
+
+
+\begin{figure}[H]
+\vspace{0.5cm}
+\centering
+\includegraphics[scale=1.7]{3.jpg}\\
+
+\caption{\centering \textbf {Fig. Name}}
+\vspace{1cm}
+\end{figure}
+
+
+
+\chapter{CONCLUSION AND FUTURE ENHANCEMENTS}
+\linespread{1.5}
+\section{Summary}
+SHOULD BE MINIMUM TWO PARAGRAPHS -WITH MINIMUM 150 WORDS
+
+\section{Limitations}
+SHOULD BE MINIMUM TWO PARAGRAPHS -WITH MINIMUM 150 WORDS
+
+\section{Future Enhancements}
+SHOULD BE MINIMUM TWO PARAGRAPHS -WITH MINIMUM 150 WORDS
+
+
+
+
+
+
+\chapter{ADDRESSING COMPLEX ENGINEERING PROBLEM AND SDG}
+
+% -------------------------------------------------------
+\section{Mapping of the Project to Complex Engineering Problem (CEP)}
+\begin{table}{H}
+\noindent\textbf{Note:} WhichWP level mapping for your project you can mention.\\
+WP1,SDG 1 is Mandatory...
+.
+\end{table}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{1.2cm}|p{3cm}|p{4cm}|p{2.5cm}|p{4.5cm}|}
+\hline
+\textbf{Level} & \textbf{Attribute} & \textbf{Characteristics} & \textbf{Targeted WKs} & \textbf{Justification (as applicable)} \\
+\hline
+WP1 & Depth of Knowledge &
+Cannot be resolved without in-depth engineering knowledge at the level of K3, K4, K5, K6 or K8 &
+WK3, WK4, WK5, WK6, WK8 &
+The secure data management and visualization platform requires deep understanding of engineering fundamentals (distributed databases, networking), specialist knowledge (homomorphic encryption, blockchain, IDS), engineering design (multi-layered architecture), professional practice (security enforcement in data centers), and extensive research literature to address scalability and cybersecurity challenges. \\
+\hline
+WP2 & Range of conflicting requirements &
+Involve wide-ranging and/or conflicting technical and non-technical issues &
+WK4, WK5, WK6, WK8 &
+The work addresses conflicting requirements such as data security versus real-time performance, privacy versus accessibility, scalability versus computational overhead, and compliance versus usability. Ethical, legal, and societal concerns related to sensitive data protection and future cybersecurity threats are also considered. \\
+\hline
+WP3 & Depth of analysis required &
+Have no obvious solution and require originality in analysis &
+WK3, WK4, WK5, WK8 &
+There is no standard solution for secure, scalable, real-time data visualization under zero-trust constraints. The solution requires abstract thinking, original architectural modeling, algorithm selection, and extensive performance evaluation using AI-based threat detection and encrypted computation. \\
+\hline
+WP4 & Familiarity of issues &
+Involve infrequently encountered or novel problems &
+WK4, WK8 &
+The integration of homomorphic encryption, blockchain-based audit logging, and AI-driven visualization in data centers represents emerging and infrequently encountered engineering problems beyond routine data management practices. \\
+\hline
+WP5 & Extent of applicable codes &
+Address problems not encompassed by standards and codes of practice &
+WK6, WK8 &
+Existing data center security and visualization standards do not fully address encrypted analytics, blockchain-enabled transparency, and zero-trust visualization architectures. Hence, research-based engineering judgment was essential. \\
+\hline
+WP6 & Stakeholder involvement and conflicting requirements &
+Involve collaboration across disciplines and diverse stakeholders &
+WK5, WK6, WK7 &
+The system involves administrators, end users, organizations, and regulatory stakeholders with varying requirements. RBAC and blockchain audit logging are used to resolve conflicts related to access control, transparency, and compliance. \\
+\hline
+WP7 & Interdependence &
+Address high-level problems requiring a systems approach &
+WK3, WK5, WK6 &
+The platform consists of interdependent subsystems including frontend interfaces, backend processing, distributed databases, AI analytics, encryption modules, and visualization layers, requiring a holistic systems engineering approach. \\
+\hline
+\end{tabular}
+\caption{Mapping of Project to Complex Engineering Problem (CEP)}
+\end{table}
+
+% -------------------------------------------------------
+\section{Mapping of the Project to Complex Engineering Activities (CEA)}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{1.2cm}|p{3cm}|p{4cm}|p{6.5cm}|}
+\hline
+\textbf{EA No.} & \textbf{Attribute} & \textbf{Characteristics} & \textbf{Justification based on the Project} \\
+\hline
+EA1 & Range of Resources &
+Diverse resources and technologies &
+The project utilizes large-scale datasets, distributed infrastructure, blockchain platforms, AI frameworks, cloud resources, and skilled human roles such as admins, users, and auditors. \\
+\hline
+EA2 & Level of Interactions &
+Optimization of complex interactions &
+It resolves interactions between security layers, data processing pipelines, visualization performance, and user access control under heavy workloads. \\
+\hline
+EA3 & Innovation &
+Creative and research-based solutions &
+Innovative use of homomorphic encryption, blockchain-based audit logging, AI-powered anomaly detection, and zero-trust architecture demonstrates research-driven engineering practice. \\
+\hline
+EA4 & Consequences to Society and Environment &
+Significant societal impact &
+Ensures protection of sensitive data in domains like healthcare and finance, reduces cyber risks, and enhances trust in digital infrastructure, where failures could have serious societal consequences. \\
+\hline
+EA5 & Familiarity &
+Extends beyond prior experience &
+The project applies principle-based approaches and emerging technologies beyond conventional data management systems. \\
+\hline
+\end{tabular}
+\caption{Mapping of Project to Complex Engineering Activities (CEA)}
+\end{table}
+
+% -------------------------------------------------------
+\section{SDG Mapping (CEP Section)}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{1.8cm}|p{4cm}|p{9cm}|}
+\hline
+\textbf{SDG No.} & \textbf{SDG Title} & \textbf{Relevance to the Project} \\
+\hline
+SDG 9  & Industry, Innovation and Infrastructure &
+Promotes secure, scalable, and innovative digital infrastructure for next-generation data centers. \\
+\hline
+SDG 16 & Peace, Justice and Strong Institutions &
+Enhances transparency, data integrity, auditability, and trust through blockchain and strong security mechanisms. \\
+\hline
+SDG 11 & Sustainable Cities and Communities &
+Supports reliable data infrastructure for smart city and urban analytics applications. \\
+\hline
+SDG 3  & Good Health and Well-being &
+Enables secure handling and visualization of healthcare data, reducing risks of data breaches and fraud. \\
+\hline
+\end{tabular}
+\caption{SDG Mapping for the Project}
+\end{table}
+
+
+
+
+\chapter{PLAGIARISM REPORT}
+ATTACH ONLY SUMMARY PAGE OF PLAGIARISM REPORT
+
+\chapter{SOURCE CODE}
+\section{Source Code}
+
+
+\addcontentsline{toc}{chapter}{References}
+\renewcommand\bibname{References}
+
+
+\begin{thebibliography}{9}
+\bibitem {latexcompanion} \text{Pamella Soares; Raphael Saraiva; Iago Fernandes; Antônio Neto; Jerffeson Souza(2022).A Blockchain-based Customizable Document Registration Service for Third Parties, IEEE International Conference ,20(15),7456-7462}\\\\ \textbf{FORMAT:Author(s)name (Year).Title, Journal name, Volume,
+Issue, Pageno.}\\
+\end{thebibliography}
+\newpage
+
+\begin{center} \textbf{General Instructions} \end{center} 
+\begin{itemize}
+\item Cover Page should be printed as per the color template and the next page also should be printed in color as per the template
+\item \textbf {Wherever Figures applicable in Report , that page should be printed in color}
+\item Dont include general content , write more technical content
+
+
+\item Each chapter should minimum contain 3 pages
+\item Draw the notation of diagrams properly 
+
+\item Every paragraph should be started with one tab space 
+\item Literature review should be properly cited and described with content related to project
+\item All the diagrams should be properly described and dont include general information of any diagram
+\item Example Use case diagram - describe according to your project flow
+\item All diagrams,figures should be numbered according to the chapter number and it should be cited properly
+\item\textbf {Testing and codequality should done in Sonarqube Tool}
+\item Test cases should be written with test input and test output
+\item All the references should be cited in the report 
+\item \textbf {AI Generated text will not be considered}
+\item \textbf {Submission of Project Execution Files with Code in GitHub Repository}
+\item \textbf {Thickness of Cover and Rear Page of Project report should be 180 GSM}
+\item \textbf{Internship Offer letter and neccessary documents should be attached}
+\item \textbf{Strictly dont change font style or font size of the template, and dont customize the latex code of report}
+\item \textbf{Report should be prepared according to the template only}
+\item \textbf{Any deviations from the report template,will be summarily rejected}
+\item \textbf{ Number of Project Soft Binded copy for each and every batch is (n+1) copies as given in the table below}
+
+
+\item For \textbf{Standards and Policies} refer the below link \\
+https://law.resource.org/pub/in/manifest.in.html
+
+\item Plagiarism should be less than 15\% 
+\item  \textbf {Journal/Conference Publication proofs should be attached in the last page of Project report after the references section}
+\end{itemize}
+
+\newpage
+\includepdf[page=-]{Instructions-Major-intern}
+
+
+\end{document}

@@ -1,0 +1,14 @@
+{
+  "name": "veltech-hostel-complaint-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vel Tech Hostel Complaint Management System - 10214CS601 Minor Project-1",
+  "scripts": {
+    "dev": "node dev-runner.js",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix backend start"
+  }
+}
