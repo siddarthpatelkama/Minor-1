@@ -140,3 +140,4 @@ export async function syncGoogleUser(session: any): Promise<User | null> {
     };
   }
 }
+

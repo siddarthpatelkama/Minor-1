@@ -163,7 +163,7 @@ export const PortalSelect: React.FC<PortalSelectProps> = ({ onSelectPortal, onQu
                 onClick={() => onQuickDemo('warden')}
                 className="w-full py-2 px-3 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-600 hover:text-slate-900 font-medium text-[11px] border border-slate-200 transition"
               >
-                Test Officer: Dr. S. Manohar (Chief Warden)
+                Test Officer: Dr. K. Ramanathan (Hostel Warden)
               </button>
             </div>
           </div>

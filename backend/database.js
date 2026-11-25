@@ -149,8 +149,8 @@ if (userCount === 0) {
 
     // Warden
     {
-      id: 'warden-manohar',
-      name: 'Dr. S. Manohar',
+      id: 'warden-ramanathan',
+      name: 'Dr. K. Ramanathan',
       email: 'chiefwarden@veltech.edu.in',
       password: 'wardenpassword123',
       role: 'warden',
@@ -294,7 +294,7 @@ if (complaintCount === 0) {
       resolved_at: null,
       history: [
         { id: 'hist-01', status: 'Pending', updated_by: 'K. Siddarth Patel', updated_by_role: 'student', remarks: 'Grievance submitted with Emergency priority due to fire risk', timestamp: new Date(Date.now() - 3600000 * 7).toISOString() },
-        { id: 'hist-02', status: 'Assigned', updated_by: 'Dr. S. Manohar', updated_by_role: 'warden', remarks: 'Dispatched Ramesh Kumar (Electrician) for immediate inspection', timestamp: new Date(Date.now() - 3600000 * 3).toISOString() },
+        { id: 'hist-02', status: 'Assigned', updated_by: 'Dr. K. Ramanathan', updated_by_role: 'warden', remarks: 'Dispatched Ramesh Kumar (Electrician) for immediate inspection', timestamp: new Date(Date.now() - 3600000 * 3).toISOString() },
         { id: 'hist-03', status: 'In Progress', updated_by: 'Ramesh Kumar', updated_by_role: 'staff', remarks: 'Arrived at Block A with replacement switchboard modular unit', timestamp: new Date(Date.now() - 3600000 * 1).toISOString() }
       ]
     },
@@ -323,7 +323,7 @@ if (complaintCount === 0) {
       resolved_at: null,
       history: [
         { id: 'hist-04', status: 'Pending', updated_by: 'Ramsetty Sreevasthav', updated_by_role: 'student', remarks: 'Geyser leaking issue filed', timestamp: new Date(Date.now() - 3600000 * 10).toISOString() },
-        { id: 'hist-05', status: 'Assigned', updated_by: 'Dr. S. Manohar', updated_by_role: 'warden', remarks: 'Assigned to Sundar Raj (Plumber) for pipe fitting replacement', timestamp: new Date(Date.now() - 3600000 * 4).toISOString() }
+        { id: 'hist-05', status: 'Assigned', updated_by: 'Dr. K. Ramanathan', updated_by_role: 'warden', remarks: 'Assigned to Sundar Raj (Plumber) for pipe fitting replacement', timestamp: new Date(Date.now() - 3600000 * 4).toISOString() }
       ]
     },
     {
@@ -351,7 +351,7 @@ if (complaintCount === 0) {
       resolved_at: new Date(Date.now() - 86400000 * 1).toISOString(),
       history: [
         { id: 'hist-06', status: 'Pending', updated_by: 'A. Rakesh', updated_by_role: 'student', remarks: 'Tap leaking reported', timestamp: new Date(Date.now() - 86400000 * 3).toISOString() },
-        { id: 'hist-07', status: 'Assigned', updated_by: 'Dr. S. Manohar', updated_by_role: 'warden', remarks: 'Assigned to plumbing staff', timestamp: new Date(Date.now() - 86400000 * 2).toISOString() },
+        { id: 'hist-07', status: 'Assigned', updated_by: 'Dr. K. Ramanathan', updated_by_role: 'warden', remarks: 'Assigned to plumbing staff', timestamp: new Date(Date.now() - 86400000 * 2).toISOString() },
         { id: 'hist-08', status: 'Resolved', updated_by: 'Sundar Raj', updated_by_role: 'staff', remarks: 'Washer replaced and tested', timestamp: new Date(Date.now() - 86400000 * 1).toISOString() }
       ],
       feedback: {
@@ -710,7 +710,7 @@ const sqliteMethods = {
     `).run(
       `hist-${Date.now()}`,
       id,
-      wardenName || 'Dr. S. Manohar',
+      wardenName || 'Dr. K. Ramanathan',
       remarks,
       timestamp
     );
