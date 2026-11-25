@@ -35,10 +35,10 @@ export const PortalSelect: React.FC<PortalSelectProps> = ({ onSelectPortal, onQu
             Centralized Hostel Administration • 2026-27 Academic Session
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Hostel Grievance & Maintenance Redressal Portal
+            Hostel Maintenance Management & Redressal Portal
           </h1>
           <p className="text-sm text-slate-600 max-w-2xl mx-auto mt-2 leading-relaxed">
-            Vel Tech University provides an automated system for hostel residents to register room maintenance grievances, track repair workflows, and obtain expedited service resolution from campus engineering teams.
+            Vel Tech University provides an automated system for hostel residents to register room maintenance requests, track repair workflows, and obtain expedited service resolution from campus engineering teams.
           </p>
 
           {/* SLA Badges */}
@@ -136,7 +136,7 @@ export const PortalSelect: React.FC<PortalSelectProps> = ({ onSelectPortal, onQu
                 Warden Office
               </h2>
               <p className="text-xs text-slate-600 mt-2.5 leading-relaxed">
-                Supervise grievances across all campus blocks. Review priority ratings, triage electrical/plumbing emergencies, and dispatch maintenance technicians.
+                Supervise maintenance across all campus blocks. Review priority ratings, triage electrical/plumbing emergencies, and dispatch maintenance technicians.
               </p>
 
               <div className="mt-4 pt-3 border-t border-slate-100 space-y-1.5 text-xs text-slate-600">

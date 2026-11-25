@@ -70,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </span>
               </div>
               <p className="text-[11px] text-slate-500">
-                Grievance & Maintenance Redressal System
+                Hostel Maintenance Management & Redressal System
               </p>
             </div>
           </div>
@@ -85,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
-              Complaints & Grievances
+              Complaints & Maintenance
             </button>
             {currentRole === 'student' && (
               <button
@@ -96,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     : 'text-[#750000] hover:bg-red-50 border border-red-200 font-bold'
                 }`}
               >
-                + Lodge Grievance
+                + Lodge Maintenance Request
               </button>
             )}
             <button

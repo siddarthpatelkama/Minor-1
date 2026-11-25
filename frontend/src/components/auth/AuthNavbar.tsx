@@ -53,7 +53,7 @@ export const AuthNavbar: React.FC<AuthNavbarProps> = ({ currentPortal, onNavigat
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 font-medium">
-                Official Hostel Grievance & Maintenance Management Portal
+                Official Hostel Maintenance Management Portal
               </p>
             </div>
           </div>

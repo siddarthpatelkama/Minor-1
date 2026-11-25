@@ -116,7 +116,7 @@ export const StudentLogin: React.FC<StudentLoginProps> = ({ onBack, onNavigate }
                 Student Residence Portal
               </h2>
               <p className="text-xs text-slate-500 mt-1">
-                Vel Tech Hostel Grievance & Maintenance Management
+                Vel Tech Hostel Maintenance Management
               </p>
 
               <div className="mt-5 space-y-3 pt-4 border-t border-slate-100 text-xs text-slate-600">

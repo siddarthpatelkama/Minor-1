@@ -111,7 +111,7 @@ export const WardenView: React.FC = () => {
         <div>
           <div className="flex items-center gap-2.5">
             <h2 className="text-xl font-bold text-slate-900">
-              Warden Grievance Triage Console
+              Warden Maintenance Triage Console
             </h2>
             <span className="bg-blue-50 text-blue-800 border border-blue-200 text-xs px-2.5 py-0.5 rounded-full font-bold">
               Hostel Supervision & Dispatch
@@ -249,7 +249,7 @@ export const WardenView: React.FC = () => {
         {loading ? (
           <div className="p-12 text-center text-slate-500 text-xs">
             <div className="w-7 h-7 border-2 border-blue-800 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
-            Loading grievance repository...
+            Loading maintenance repository...
           </div>
         ) : filtered.length === 0 ? (
           <div className="p-12 text-center text-slate-500 text-xs">
@@ -343,7 +343,7 @@ export const WardenView: React.FC = () => {
                           <td colSpan={7} className="p-4 border-t border-slate-100 text-xs">
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                               <div className="md:col-span-2 space-y-2">
-                                <span className="font-bold text-slate-700 block">Full Grievance Report:</span>
+                                <span className="font-bold text-slate-700 block">Full Maintenance Report:</span>
                                 <p className="text-slate-600 bg-white p-3 rounded-xl border border-slate-200">
                                   {c.description}
                                 </p>
