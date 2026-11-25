@@ -2,6 +2,7 @@
 import os
 
 content = r'''\documentclass[10pt]{report}
+\usepackage[utf8]{inputenc}
 \usepackage{blindtext}
 \usepackage{times}
 \usepackage{graphicx}
@@ -98,7 +99,7 @@ content = r'''\documentclass[10pt]{report}
 \begin{tabular}{lcr}
 K. SIDDARTH PATEL & (24UECS1237) & (VTU28319)\\
 RAMSETTY SREEVASTHAV & (24UECS1353) & (VTU28844)\\
-A. RAKESH & (24UECS1121) & (VTU27728)\\
+A. RAKESH & (24UECS1121) & (VTU27728)
 \end{tabular}
 }
 \par\vspace{0.8cm}
@@ -143,7 +144,7 @@ A. RAKESH & (24UECS1121) & (VTU27728)\\
 \begin{tabular}{lcr}
 K. SIDDARTH PATEL & (24UECS1237) & (VTU28319)\\
 RAMSETTY SREEVASTHAV & (24UECS1353) & (VTU28844)\\
-A. RAKESH & (24UECS1121) & (VTU27728)\\
+A. RAKESH & (24UECS1121) & (VTU27728)
 \end{tabular}
 }
 \par\vspace{0.8cm}
@@ -174,7 +175,9 @@ A. RAKESH & (24UECS1121) & (VTU27728)\\
 {\Huge \textbf{CERTIFICATE}}\\[1cm]
 \end{center}
 \linespread{1.5}
-\large{It is certified that the work contained in the project report titled \textbf{"HOSTEL COMPLAINT MANAGEMENT SYSTEM"} by \textbf{"K. SIDDARTH PATEL (24UECS1237), RAMSETTY SREEVASTHAV (24UECS1353), A. RAKESH (24UECS1121)"} has been carried out under my supervision and that this work has not been submitted elsewhere for a degree.}
+\begin{sloppypar}
+\large It is certified that the work contained in the project report titled \textbf{"HOSTEL COMPLAINT MANAGEMENT SYSTEM"} by \textbf{K. SIDDARTH PATEL (24UECS1237), RAMSETTY SREEVASTHAV (24UECS1353), A. RAKESH (24UECS1121)} has been carried out under my supervision and that this work has not been submitted elsewhere for a degree.
+\end{sloppypar}
 \vspace{1.5cm}
 \begin{flushright}
 \textbf{Signature of Supervisor}\\
@@ -234,7 +237,7 @@ We declare that this written submission represents our ideas in our own words an
 \large This project report entitled \textbf{"HOSTEL COMPLAINT MANAGEMENT SYSTEM"} by \textbf{K. SIDDARTH PATEL (24UECS1237), RAMSETTY SREEVASTHAV (24UECS1353), A. RAKESH (24UECS1121)} is approved for the degree of B.Tech in Computer Science \& Engineering.}
 \vspace{3.5cm}
 \begin{flushleft}
-\Large \textbf{Examiners} \hfill \Large \textbf{Supervisor}\\
+\Large \textbf{Examiners} \hfill \Large \textbf{Supervisor}
 \end{flushleft}
 \begin{flushright}
 Dr. S. Manohar, M.E., Ph.D.\\
@@ -278,7 +281,7 @@ Assistant Professor (SG)
 \begin{tabular}{>{\bfseries}lc>{\bfseries}r}
 K. SIDDARTH PATEL & & (24UECS1237)\\
 RAMSETTY SREEVASTHAV & & (24UECS1353)\\
-A. RAKESH & & (24UECS1121)\\
+A. RAKESH & & (24UECS1121)
 \end{tabular}
 \end{flushright}
 
@@ -341,7 +344,7 @@ The architectural framework utilizes a high-performance Single Page Application 
 \textbf{IEEE} & Institute of Electrical and Electronics Eng.  & \textbf{Vite}  & Fast Next-Generation Tooling \\
 \textbf{ISO}  & International Organization for Standardization& \textbf{WAL}   & Write-Ahead Logging \\
 \textbf{JSON} & JavaScript Object Notation                    & \textbf{WCAG}  & Web Content Accessibility Guidelines \\
-\textbf{JWT}  & JSON Web Token                                & & \\
+\textbf{JWT}  & JSON Web Token                                & & 
 \end{tabular}
 \end{center}
 
@@ -361,16 +364,16 @@ The architectural framework utilizes a high-performance Single Page Application 
 \section{Introduction}
 \hspace{0.5cm}In residential university campuses, student housing represents an indispensable pillar of institutional infrastructure. Modern universities accommodate thousands of residential students across multiple hostel blocks, necessitating round-the-clock maintenance of living quarters, sanitary facilities, electrical power systems, plumbing networks, high-speed Wi-Fi connectivity, and structural civil assets. The quality of hostel maintenance directly influences the physical safety, academic productivity, mental well-being, and overall satisfaction of student residents. 
 
-Historically, hostel facilities management in most collegiate campuses has relied upon manual physical registers stationed at hostel reception desks or security entry gates. When a student encounters a breakdown—such as a burnt electrical switchboard, a leaking geyser, a broken door latch, or malfunctioning internet access points—they are required to physically walk to the security office and handwrite their room number, contact details, and problem description into a paper register. Maintenance supervisors subsequently inspect these registers once or twice daily, manually copy entries into job books, and verbally instruct resident technicians or contracted artisans to attend to the repairs. 
+Historically, hostel facilities management in most collegiate campuses has relied upon manual physical registers stationed at hostel reception desks or security entry gates. When a student encounters a breakdown---such as a burnt electrical switchboard, a leaking geyser, a broken door latch, or malfunctioning internet access points---they are required to physically walk to the security office and handwrite their room number, contact details, and problem description into a paper register. Maintenance supervisors subsequently inspect these registers once or twice daily, manually copy entries into job books, and verbally instruct resident technicians or contracted artisans to attend to the repairs. 
 
 While manual logging mechanisms were adequate for small-scale campuses in past decades, they fail dramatically in large, contemporary engineering universities. Hand-written complaint registers lack accountability, transparency, and traceability. Complaint entries are frequently misplaced, smudged, or overlooked during administrative shift handovers. Students have no visibility into whether their complaint has been reviewed, dispatched, or scheduled, causing them to make repetitive physical inquiries or suffer from unresolved living hazards. Furthermore, hostel wardens and higher management lack centralized oversight into depot performance, recurring equipment failures, inventory consumption, and technician resolution timelines. 
 
-To bridge this operational void, this project develops the \textbf{Hostel Complaint Management System}. Designed as a specialized institutional web platform, the system digitizes the entire lifecycle of campus facilities management—from grievance lodging, photographic evidence collection, and automated priority queueing, to administrative triage, work order dispatch, technician execution, and post-resolution student verification. By establishing dedicated, role-specific portals for Students, Wardens, and Maintenance Depot Technicians, the platform guarantees end-to-end accountability, enforces stringent Service Level Agreements (SLAs), and provides verifiable analytical dashboards for campus management.
+To bridge this operational void, this project develops the \textbf{Hostel Complaint Management System}. Designed as a specialized institutional web platform, the system digitizes the entire lifecycle of campus facilities management---from grievance lodging, photographic evidence collection, and automated priority queueing, to administrative triage, work order dispatch, technician execution, and post-resolution student verification. By establishing dedicated, role-specific portals for Students, Wardens, and Maintenance Depot Technicians, the platform guarantees end-to-end accountability, enforces stringent Service Level Agreements (SLAs), and provides verifiable analytical dashboards for campus management.
 
 \section{Background}
 \hspace{0.5cm}Vel Tech Rangarajan Dr. Sagunthala R\&D Institute of Science and Technology houses extensive residential facilities comprising multiple male and female hostel blocks, housing thousands of engineering and technology students. Efficient daily management of these living complexes requires coordinated execution between hostel wardens, administrative officers, and multi-disciplinary maintenance depots encompassing electrical, plumbing, carpentry, networking, and housekeeping services.
 
-The prevailing operational workflow in campus hostels has highlighted multiple systemic bottlenecks. First, the spatial distribution of student hostels across extensive campus acreage makes manual physical reporting inconvenient and inefficient. Students studying or residing in distant blocks are often unable to lodge urgent maintenance issues promptly during lecture hours or late at night. Second, verbal handovers between security guards and maintenance personnel frequently introduce miscommunication regarding the exact nature or severity of infrastructural hazards. Third, emergency situations—such as electrical sparking, localized water pipe bursts, or corridor lighting failures—often fail to receive immediate priority categorization in a flat, chronological paper notebook. 
+The prevailing operational workflow in campus hostels has highlighted multiple systemic bottlenecks. First, the spatial distribution of student hostels across extensive campus acreage makes manual physical reporting inconvenient and inefficient. Students studying or residing in distant blocks are often unable to lodge urgent maintenance issues promptly during lecture hours or late at night. Second, verbal handovers between security guards and maintenance personnel frequently introduce miscommunication regarding the exact nature or severity of infrastructural hazards. Third, emergency situations---such as electrical sparking, localized water pipe bursts, or corridor lighting failures---often fail to receive immediate priority categorization in a flat, chronological paper notebook. 
 
 Recent advancements in modern full-stack web engineering, lightweight relational database engines with Write-Ahead Logging (WAL), and reactive frontend frameworks offer powerful mechanisms to overcome these operational limitations. By leveraging single-page web application architectures accessible from both mobile smartphones and desktop workstations, educational institutions can establish responsive, real-time communication channels between residents and administration without requiring costly, resource-heavy enterprise software suites.
 
@@ -425,7 +428,7 @@ V. Raman and H. Sundaram~\cite{raman2022} explored decentralized multi-trade dis
 
 A. Deshmukh, K. Iyer, and P. Kulkarni~\cite{deshmukh2023} assessed feedback loop enforcement in student residential services. They demonstrated that requiring mandatory student verification and satisfaction rating prior to official ticket closure increased technician completion veracity from 61\% to 96\%, eliminating unilateral staff closures.
 
-R. T. Fielding~\cite{fielding2000} formulated Representational State Transfer (REST) as an architectural style for distributed hypermedia systems. RESTful constraints—including stateless client-server separation, uniform resource identification, and cacheability—provide the formal foundation for scalable web APIs in multi-client campus environments.
+R. T. Fielding~\cite{fielding2000} formulated Representational State Transfer (REST) as an architectural style for distributed hypermedia systems. RESTful constraints---including stateless client-server separation, uniform resource identification, and cacheability---provide the formal foundation for scalable web APIs in multi-client campus environments.
 
 M. Jones, J. Bradley, and N. Sakimura~\cite{rfc7519} specified JSON Web Token (JWT) as a compact, URL-safe means of representing claims to be transferred between two parties. JWT enables cryptographic claim signing and stateless authorization, eliminating server-side session memory bottlenecks across mobile and desktop clients.
 
@@ -454,7 +457,7 @@ D. R. Hipp~\cite{sqlitewal} documented Write-Ahead Logging (WAL) algorithms in r
 \linespread{1.5}
 
 \section{Existing System}
-\hspace{0.5cm}The traditional existing system for managing hostel maintenance at university campuses relies upon manual physical complaint registers stationed at each hostel block's reception counter. Whenever an infrastructural defect occurs—such as a ceiling fan regulator failure, a pipe leakage, water heater malfunction, or damaged study furniture—the student resident must physically walk to the security desk during designated operational hours, request the paper register, and record their details.
+\hspace{0.5cm}The traditional existing system for managing hostel maintenance at university campuses relies upon manual physical complaint registers stationed at each hostel block's reception counter. Whenever an infrastructural defect occurs---such as a ceiling fan regulator failure, a pipe leakage, water heater malfunction, or damaged study furniture---the student resident must physically walk to the security desk during designated operational hours, request the paper register, and record their details.
 
 The existing manual approach suffers from numerous severe disadvantages:
 \begin{itemize}
@@ -480,7 +483,7 @@ The proposed system delivers substantial operational advantages:
 \hspace{0.5cm}A comprehensive feasibility analysis was performed across economic, technical, and operational dimensions prior to architectural development to confirm project viability.
 
 \subsection{Economic Feasibility}
-\hspace{0.5cm}The economic feasibility evaluation confirms that the Hostel Complaint Management System is exceptionally cost-effective and generates a rapid positive return on investment for the university. The system is engineered entirely using modern, open-source technologies—including React 18, Vite, TypeScript, Node.js, Express, and SQLite 3—completely eliminating expensive proprietary software licenses, recurring per-user fees, or costly database licensing subscriptions typical of commercial ERP modules. Furthermore, because SQLite is an in-process, serverless relational database engine, server hosting requirements are remarkably lightweight, operating smoothly on low-cost virtual private servers or modern free-tier container platforms (such as Render, Vercel, or local institutional servers). The primary financial benefit arises from the substantial reduction in administrative labor hours spent managing paper records, elimination of lost maintenance tools, and prevention of severe property damage through prompt resolution of emergency plumbing and electrical hazards.
+\hspace{0.5cm}The economic feasibility evaluation confirms that the Hostel Complaint Management System is exceptionally cost-effective and generates a rapid positive return on investment for the university. The system is engineered entirely using modern, open-source technologies---including React 18, Vite, TypeScript, Node.js, Express, and SQLite 3---completely eliminating expensive proprietary software licenses, recurring per-user fees, or costly database licensing subscriptions typical of commercial ERP modules. Furthermore, because SQLite is an in-process, serverless relational database engine, server hosting requirements are remarkably lightweight, operating smoothly on low-cost virtual private servers or modern free-tier container platforms (such as Render, Vercel, or local institutional servers). The primary financial benefit arises from the substantial reduction in administrative labor hours spent managing paper records, elimination of lost maintenance tools, and prevention of severe property damage through prompt resolution of emergency plumbing and electrical hazards.
 
 \subsection{Technical Feasibility}
 \hspace{0.5cm}The technical feasibility assessment examined hardware capacity, software runtime dependencies, networking prerequisites, and architectural scalability. The system utilizes standard web standards (HTML5, CSS3, JavaScript ES2022) supported natively across all modern web browsers (Google Chrome, Mozilla Firefox, Apple Safari, Microsoft Edge) without requiring proprietary plugins or client-side software installations. On the server side, Node.js delivers high-throughput, asynchronous event-driven I/O ideal for concurrent API interactions. SQLite 3 with Write-Ahead Logging (WAL) mode enables concurrent reading operations while a write transaction is underway, easily supporting hundreds of simultaneous campus requests with sub-millisecond query execution. The client-side application is optimized via Vite tree-shaking and static minification, producing an initial bundle size under 250 KB that loads swiftly even on campus Wi-Fi or mobile data connections.
@@ -651,7 +654,7 @@ Figure 4.7 structures procedural execution across three swimlanes: Student Resid
   \text{LOW} & \text{for minor cosmetic adjustments}
   \end{cases}
   \]
-\item \textbf{SLA Allocation:} Assign target completion timestamp: $T_{SLA} = T_{Current} + \Delta T(P)$, where $\Delta T(\text{Emergency}) = 4\text{ hours}$, $\Delta T(\text{High}) = 12\text{ hours}$, $\Delta T(\text{Normal}) = 24\text{ hours}$, and $\Delta T(\text{Low}) = 48\text{ hours}$.
+\item \textbf{SLA Allocation:} Assign target completion timestamp: $T_{\text{SLA}} = T_{\text{Current}} + \Delta T(P)$, where target hours are $\Delta T(\text{Emergency}) = 4\text{h}$, $\Delta T(\text{High}) = 12\text{h}$, $\Delta T(\text{Normal}) = 24\text{h}$, and $\Delta T(\text{Low}) = 48\text{h}$.
 \item \textbf{Queue Insertion:} Commit transaction into SQLite database; set $Status = \text{'PENDING'}$.
 \item \textbf{Technician Matching:} Identify available technicians in trade depot $T_{Depot} = C.Category$.
 \item \textbf{Work Order Dispatch:} When warden confirms dispatch, update $Status = \text{'ASSIGNED'}$, assign $StaffId$, and notify technician console.
@@ -726,7 +729,7 @@ END FUNCTION
 
 \section{Steps to Execute / Run / Implement the Project}
 
-\subsection{Step 1 – Setup and Configuration}
+\subsection{Step 1 -- Setup and Configuration}
 \begin{itemize}
 \item Clone the project repository from GitHub: \texttt{git clone https://github.com/vtu/hostel-complaint-system.git}.
 \item Ensure Node.js (v18.x or v20.x LTS) and npm are installed on the workstation.
@@ -735,7 +738,7 @@ END FUNCTION
 \item Verify SQLite database file provisioning in \texttt{backend/data/hostel.db}.
 \end{itemize}
 
-\subsection{Step 2 – Development and Execution}
+\subsection{Step 2 -- Development and Execution}
 \begin{itemize}
 \item Launch both development servers concurrently using the root runner: \texttt{npm run dev}.
 \item The Express API server boots on \texttt{http://localhost:5000}, automatically initializing SQLite schema tables and pre-seeding test administrative accounts.
@@ -743,7 +746,7 @@ END FUNCTION
 \item Access \texttt{http://localhost:5000/api/health} to confirm REST API operational health.
 \end{itemize}
 
-\subsection{Step 3 – Testing and Deployment}
+\subsection{Step 3 -- Testing and Deployment}
 \begin{itemize}
 \item Execute client-side type-checking and production build: \texttt{cd frontend \&\& npm run build}.
 \item Run backend automated endpoint tests: \texttt{cd backend \&\& npm test}.
@@ -931,7 +934,7 @@ Figure 6.1 presents the quantitative comparison across four primary operational 
 \footnotesize
 \linespread{1.0}\selectfont
 \renewcommand{\arraystretch}{1.05}
-\begin{tabular}{|p{1.0cm}|p{2.6cm}|p{3.5cm}|p{1.7cm}|p{6.2cm}|}
+\begin{tabular}{|p{0.9cm}|p{2.5cm}|p{3.4cm}|p{1.7cm}|p{6.0cm}|}
 \hline
 \textbf{WP No.} & \textbf{Attribute} & \textbf{CEP Characteristics} & \textbf{Knowledge Profile} & \textbf{Justification based on Project} \\
 \hline
@@ -1180,7 +1183,7 @@ module.exports = {
 \bibitem{fielding2000} R. T. Fielding, ``Architectural Styles and the Design of Network-based Software Architectures,'' Ph.D. dissertation, Dept. Information and Computer Science, Univ. California, Irvine, CA, USA, 2000.
 \bibitem{rfc7519} M. Jones, J. Bradley, and N. Sakimura, ``JSON Web Token (JWT),'' RFC 7519, IETF, May 2015.
 \bibitem{wcag21} W3C Web Accessibility Initiative, ``Web Content Accessibility Guidelines (WCAG) 2.1,'' W3C Recommendation, Jun. 2018.
-\bibitem{iso27001} \textit{Information technology — Security techniques — Information security management systems — Requirements}, ISO/IEC Standard 27001:2022, Oct. 2022.
+\bibitem{iso27001} \textit{Information technology --- Security techniques --- Information security management systems --- Requirements}, ISO/IEC Standard 27001:2022, Oct. 2022.
 \bibitem{ieee829} \textit{IEEE Standard for Software and System Test Documentation}, IEEE Standard 829-2008, Jul. 2008.
 \bibitem{reactdocs} Facebook Open Source, ``React 18 Architecture: Concurrent Features and Component Composition,'' Meta Platforms Inc., Tech. Rep., 2022.
 \bibitem{sqlitewal} D. R. Hipp, ``Write-Ahead Logging in SQLite: Concurrency, Crash-Proof Atomicity and Performance Characteristics,'' SQLite Consortium, White Paper, 2023.
