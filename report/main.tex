@@ -23,7 +23,7 @@
 \definecolor{navyblue}{RGB}{21, 101, 192}
 
 \makeatletter
-\def\@makechapterhead#1{%
+\long\def\@makechapterhead#1{%
   {\parindent \z@ \centering\normalfont
     \ifnum \c@secnumdepth >\m@ne
         \huge\bfseries \@chapapp\space \thechapter
@@ -34,7 +34,7 @@
     \Huge \bfseries #1\par\nobreak
     \vskip 40\p@
   }}
-\def\@makeschapterhead#1{%
+\long\def\@makeschapterhead#1{%
   {\parindent \z@ \centering
     \normalfont
     \interlinepenalty\@M
@@ -43,29 +43,7 @@
   }}
 \makeatother
 
-\lstset{
- language=Java,
- basicstyle=\footnotesize\ttfamily,
- numbers=left,
- numberstyle=\tiny\color{gray},
- stepnumber=1,
- numbersep=5pt,
- backgroundcolor=\color{white},
- showspaces=false,
- showstringspaces=false,
- showtabs=false,
- frame=single,
- rulecolor=\color{black},
- tabsize=2,
- captionpos=b,
- breaklines=true,
- breakatwhitespace=false,
- title=\lstname,
- keywordstyle=\color{blue}\bfseries,
- commentstyle=\color{gray}\itshape,
- stringstyle=\color{mauve},
- morekeywords={const,let,var,async,await,function,import,from,export,default}
-}
+\lstset{language=Java,basicstyle=\footnotesize\ttfamily,numbers=left,numberstyle=\tiny\color{gray},stepnumber=1,numbersep=5pt,backgroundcolor=\color{white},showspaces=false,showstringspaces=false,showtabs=false,frame=single,rulecolor=\color{black},tabsize=2,captionpos=b,breaklines=true,breakatwhitespace=false,title=\lstname,keywordstyle=\color{blue}\bfseries,commentstyle=\color{gray}\itshape,stringstyle=\color{mauve},morekeywords={const,let,var,async,await,function,import,from,export,default}}
 
 \geometry{a4paper,total={180mm,250mm},left=20mm,top=20mm, right=20mm}
 
@@ -563,9 +541,11 @@ As illustrated in Figure 4.1, the system is organized into three distinct, speci
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.95\textwidth]{dfd_diagram.png}
+ \includegraphics[width=0.88\textwidth]{dfd_diagram.png}
+ \vspace{0.4cm}
  \caption{\textbf{Data Flow Diagram (Level 1) - Complaint Lifecycle}}
 \end{figure}
+\vspace{0.3cm}
 
 \noindent \textbf{DFD Description:}\\
 Figure 4.2 illustrates the Level 1 DFD. External entities (Student Resident, Warden Administrator, Maintenance Staff) interact with four primary processes: Process 1.0 validates user credentials against the User Data Store (D1); Process 2.0 captures complaint details and photographic attachments, generating a unique ticket record in the Complaint Data Store (D2); Process 3.0 allows the warden to prioritize issues and generate work order assignments dispatched to maintenance staff; and Process 4.0 updates resolution milestones and captures student verification ratings.
@@ -605,9 +585,11 @@ The abstract base class \texttt{User} encapsulates shared identity attributes an
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.95\textwidth]{sequence_diagram.png}
+ \includegraphics[width=0.88\textwidth]{sequence_diagram.png}
+ \vspace{0.4cm}
  \caption{\textbf{UML Sequence Diagram}}
 \end{figure}
+\vspace{0.3cm}
 
 \noindent \textbf{Sequence Diagram Description:}\\
 Figure 4.5 traces the 14-step chronological execution flow: (1-2) Student submits complaint via React UI to the Express API; (3-4) Server commits record to SQLite and returns ticket number; (5-6) Student view updates to "PENDING"; (7) Ticket is queued in Warden triage; (8-9) Warden dispatches technician and status updates to "ASSIGNED"; (10-11) Staff repairs defect and sets status to "RESOLVED"; (12) Student receives resolution alert; (13-14) Student verifies physical repair, submits 5-star rating, and ticket status is finalized to "CLOSED".
