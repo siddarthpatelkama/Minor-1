@@ -2,6 +2,7 @@
 \usepackage{blindtext}
 \usepackage{times}
 \usepackage{graphicx}
+\graphicspath{{images/}{./}}
 \usepackage{sectsty}
 \usepackage{float}
 \usepackage{array}
@@ -66,7 +67,7 @@
 \lstset{
   language=JavaScript,
   backgroundcolor=\color{codebg},
-  basicstyle=\ttfamily\footnotesize\linespread{1.0}\selectfont,
+  basicstyle=\ttfamily\scriptsize\linespread{1.0}\selectfont,
   columns=fullflexible,
   keepspaces=true,
   showstringspaces=false,
@@ -81,7 +82,7 @@
   tabsize=2,
   captionpos=b,
   breaklines=true,
-  breakatwhitespace=false,
+  breakatwhitespace=true,
   escapeinside={\%*}{*)}
 }
 
@@ -98,7 +99,7 @@
 \newpage
 \begin{center}
 \hspace{10cm}
-\LARGE{\textsc {\textbf{\textcolor{white}{Batch No: MI2026}}}}\\[0.2cm]
+\LARGE{\textsc {\textbf{\textcolor{white}{Batch No: 1155}}}}\\[0.2cm]
 
 \thispagestyle{empty}
 \LARGE{\textsc {\textbf{\textcolor{white}{HOSTEL COMPLAINT MANAGEMENT SYSTEM}}}}\\[0.2cm]
@@ -123,8 +124,8 @@ A. RAKESH & (24UECS1121) & (VTU27728)\\
 
 \vspace{0.5cm}
 \large{\textit{\textcolor{white}{Under the guidance of}}}\\
-\large{\textit{\textcolor{white}{Dr. S. MANOHAR, B.Sc., M.Sc., M.E., Ph.D.,}}}\\
-\large{\textit{\textcolor{white}{ASSOCIATE PROFESSOR}}}\\
+\large{\textit{\textcolor{white}{Dr. S. MANOHAR, M.E., Ph.D.,}}}\\
+\large{\textit{\textcolor{white}{ASSISTANT PROFESSOR (SENIOR GRADE)}}}\\
 
 \vspace{0.5cm}
 \includegraphics[scale=0.5]{Vel tech-Logo.png}\\
@@ -150,7 +151,7 @@ A. RAKESH & (24UECS1121) & (VTU27728)\\
 \color{black}
 \begin{center}
 \hspace{10cm}
-\LARGE{\textsc {\textbf{\textcolor{blue}{Batch No: MI2026}}}}\\[0.2cm]
+\LARGE{\textsc {\textbf{\textcolor{blue}{Batch No: 1155}}}}\\[0.2cm]
 \thispagestyle{empty}
 \LARGE{\textsc {\textbf{\textcolor{blue}{HOSTEL COMPLAINT MANAGEMENT SYSTEM}}}}\\[0.2cm]
 \vspace{0.2cm}
@@ -169,8 +170,8 @@ A. RAKESH & (24UECS1121) & (VTU27728)\\
 \end{table}
 \vspace{0.5cm}
 \large{\textit{\textcolor{blue}{Under the guidance of}}}\\
-\large{\textit{\textcolor{blue}{Dr. S. MANOHAR, B.Sc., M.Sc., M.E., Ph.D.,\\
-ASSOCIATE PROFESSOR}}}\\
+\large{\textit{\textcolor{blue}{Dr. S. MANOHAR, M.E., Ph.D.,\\
+ASSISTANT PROFESSOR (SENIOR GRADE)}}}\\
 \vspace{0.5cm}
 \includegraphics[scale=0.5]{Vel tech-Logo.png}\\
 \vspace{0.8cm}
@@ -198,8 +199,8 @@ ASSOCIATE PROFESSOR}}}\\
 \vspace{1.5cm}
 \begin{flushright}
 \textbf{Signature of Supervisor}\\
-Dr. S. Manohar, B.Sc., M.Sc., M.E., Ph.D.\\
-Associate Professor\\
+Dr. S. Manohar, M.E., Ph.D.\\
+Assistant Professor (SG)\\
 Computer Science \& Engineering\\
 School of Computing\\
 Vel Tech Rangarajan Dr. Sagunthala R\&D\\
@@ -255,8 +256,8 @@ We declare that this written submission represents our ideas in our own words an
 \Large \textbf{Examiners} \hfill \Large \textbf{Supervisor}\\
 \end{flushleft}
 \begin{flushright}
-Dr. S. Manohar, B.Sc., M.Sc., M.E., Ph.D.\\
-Associate Professor
+Dr. S. Manohar, M.E., Ph.D.\\
+Assistant Professor (SG)
 \end{flushright}
 \vspace{1.0cm}
 \begin{flushleft}
@@ -284,7 +285,7 @@ Associate Professor
 
 \paragraph{}We are thankful to our \textbf{Professor \& Head, Department of Computer Science and Engineering, Dr. M. KAVITHA, M.E., Ph.D.,} and \textbf{Associate Professor \& Assistant Head, Dr. T. KUJANI, M.E., Ph.D.,} for providing immense support in all our endeavors.
 
-\paragraph{}We also take this opportunity to express a deep sense of gratitude to our \textbf{Internal Supervisor Dr. S. MANOHAR, B.Sc., M.Sc., M.E., Ph.D., Associate Professor} for his cordial support, valuable information, technical guidance, and continuous encouragement in completing this project through various stages.
+\paragraph{}We also take this opportunity to express a deep sense of gratitude to our \textbf{Internal Supervisor Dr. S. MANOHAR, M.E., Ph.D., Assistant Professor (SG)} for his cordial support, valuable information, technical guidance, and continuous encouragement in completing this project through various stages.
 
 \paragraph{}A special thanks to our \textbf{Project Coordinators Dr. S. RAJAPRAKASH, M.E., Ph.D., Professor, and Dr. S. KARTHIYAYINI, M.E., Ph.D., Associate Professor} for their valuable guidance and administrative support throughout the course of the project.
 
@@ -305,19 +306,19 @@ A. RAKESH & & (24UECS1121)\\
 % =========================================================================
 \newpage
 \begin{center}
-\Huge\textbf{ABSTRACT}\\[0.8cm]
+{\Huge\textbf{ABSTRACT}}\\[0.4cm]
 \end{center}
-\linespread{1.5}
-\large{
-Campus residential administration in modern higher education institutions houses thousands of undergraduate and postgraduate students across multiple hostel blocks. Managing infrastructural maintenance, student grievances, and facility breakdowns (such as electrical failures, plumbing bursts, carpentry damages, Wi-Fi connectivity degradation, and sanitation issues) through traditional paper registers or informal messaging channels introduces critical administrative bottlenecks. These manual methodologies suffer from lack of traceability, misplaced complaint logs, zero real-time status updates for student residents, arbitrary prioritization, technician dispatch delays, and the absence of verifiable audit trails. 
+\linespread{1.25}
+\normalsize{
+Campus residential administration in modern higher education institutions houses thousands of undergraduate and postgraduate students across multiple hostel blocks. Managing infrastructural maintenance, student complaints, and facility breakdowns (such as electrical failures, plumbing bursts, carpentry damages, Wi-Fi connectivity degradation, and sanitation issues) through traditional paper registers or informal messaging channels introduces critical administrative bottlenecks. These manual methodologies suffer from lack of traceability, misplaced complaint logs, zero real-time status updates for student residents, arbitrary prioritization, technician dispatch delays, and the absence of verifiable audit trails. 
 
-To overcome these structural inefficiencies, this project presents the \textbf{Hostel Complaint Management System}, a robust, full-stack, multi-tier web application designed specifically for the residential governance workflow of Vel Tech Rangarajan Dr. Sagunthala R\&D Institute of Science and Technology. The system establishes dedicated, role-segregated interfaces tailored for three primary operational stakeholders: (1) \textit{Student Residents}, who lodge structured grievances with verified room allocations, photographic incident evidence, and monitor automated status timelines; (2) \textit{Chief Hostel Warden Administration}, who operate an administrative triage console featuring campus-wide incident analytics, severity classification, and automated Service Level Agreement (SLA) dispatch controls; and (3) \textit{Maintenance Depot Staff}, categorized by trade depots (Electrical, Plumbing, Carpentry, Network, and Housekeeping) to manage assigned work orders, update repair milestones, and submit resolution verification notes.
+To overcome these structural inefficiencies, this project presents the \textbf{Hostel Complaint Management System}, a robust, full-stack, multi-tier web application designed specifically for the residential governance workflow of Vel Tech Rangarajan Dr. Sagunthala R\&D Institute of Science and Technology. The system establishes dedicated, role-segregated interfaces tailored for three primary operational stakeholders: (1) \textit{Student Residents}, who lodge structured maintenance tickets with verified room allocations, photographic incident evidence, and monitor automated status timelines; (2) \textit{Chief Hostel Warden Administration}, who operate an administrative triage console featuring campus-wide incident analytics, severity classification, and automated Service Level Agreement (SLA) dispatch controls; and (3) \textit{Maintenance Depot Staff}, categorized by trade depots (Electrical, Plumbing, Carpentry, Network, and Housekeeping) to manage assigned work orders, update repair milestones, and submit resolution verification notes.
 
-The architectural framework utilizes a high-performance Single Page Application (SPA) frontend developed with React 18, TypeScript, and Vite, following responsive institutional branding and accessibility standards. The backend application layer is powered by Node.js and Express.js RESTful APIs, implementing stateless session validation and role-based access control. High-throughput data persistence is delivered via SQLite 3 configured with Write-Ahead Logging (WAL) mode, guaranteeing zero read-write contention and transactional ACID integrity under high concurrency. Empirical performance evaluation demonstrates a 84.5\% reduction in mean complaint resolution time (decreasing from 76.4 hours under manual registers to 11.8 hours), complete elimination of ticket loss, and an increase in student satisfaction ratings from 38\% to 92.5\%.
-}\\
+The architectural framework utilizes a high-performance Single Page Application (SPA) frontend developed with React 18, TypeScript, and Vite, following responsive institutional branding and accessibility standards. The backend application layer is powered by Node.js and Express.js RESTful APIs, implementing stateless session validation and role-based access control. High-throughput data persistence is delivered via SQLite 3 configured with Write-Ahead Logging (WAL) mode, guaranteeing zero read-write contention and transactional ACID integrity under high concurrency. Empirical performance evaluation demonstrates an 84.5\% reduction in mean complaint resolution time (decreasing from 76.4 hours under manual registers to 11.8 hours), complete elimination of ticket loss, and an increase in student satisfaction ratings from 38\% to 92.5\%.
+}
 
-\vspace{0.8cm}
-\noindent \textbf{Keywords:} Hostel Administration, Grievance Redressal, Triage System, Work Order Dispatch, Service Level Agreement (SLA), SQLite WAL, Full-Stack Web Architecture, Role-Based Access Control (RBAC).
+\vspace{0.3cm}
+\noindent \textbf{Keywords:} Hostel Administration, Maintenance Workflow, Triage System, Work Order Dispatch, Service Level Agreement (SLA), SQLite WAL, Full-Stack Web Architecture, Role-Based Access Control (RBAC).
 
 % =========================================================================
 % LIST OF FIGURES, TABLES, ACRONYMS
@@ -440,15 +441,15 @@ Furthermore, manual mechanisms lack any systematic method for prioritizing emerg
 \section{Related Work}
 \hspace{0.5cm}Academic literature and software engineering research in campus facility automation have explored various grievance logging and workflow orchestration paradigms:
 
-P. Sharma and R. Verma (2021) investigated web-based student grievance redressal portals utilizing relational database management systems. Their findings confirmed that providing students with unique tracking numbers and automated stage updates decreased physical inquiry volume by 72\%. However, their implementation lacked photographic evidence capture, leading to recurring disputes between students and technicians regarding pre-existing damage conditions.
+P. Sharma and R. Verma~\cite{sharma2021} investigated web-based student maintenance redressal portals utilizing relational database management systems. Their findings confirmed that providing students with unique tracking numbers and automated stage updates decreased physical inquiry volume by 72\%. However, their implementation lacked photographic evidence capture, leading to recurring disputes between students and technicians regarding pre-existing damage conditions.
 
-M. A. Al-Khafaji and H. T. Salim (2020) proposed a campus facility incident reporting application incorporating role-based access control (RBAC). Their study emphasized that segregating administrative triage capabilities from technician execution consoles is vital to prevent unauthorized status changes and preserve operational audit trails. Their system, however, was developed using server-side rendered architectures with significant round-trip latency, making it sluggish for mobile users.
+M. A. Al-Khafaji and H. T. Salim~\cite{alkhafaji2020} proposed a campus facility incident reporting application incorporating role-based access control (RBAC). Their study emphasized that segregating administrative triage capabilities from technician execution consoles is vital to prevent unauthorized status changes and preserve operational audit trails. Their system, however, was developed using server-side rendered architectures with significant round-trip latency, making it sluggish for mobile users.
 
-K. Patel, D. Mehta, and S. Joshi (2022) examined the impact of Service Level Agreement (SLA) timers on facility maintenance response times. By establishing automated priority weighting (categorizing issues into Emergency, High, Medium, and Low), maintenance depots resolved high-severity electrical and plumbing failures 64\% faster than unranked queues. Their research highlighted the mathematical necessity of automated SLA timers in preventing ticket stagnation.
+K. Patel, D. Mehta, and S. Joshi~\cite{patel2022} examined the impact of Service Level Agreement (SLA) timers on facility maintenance response times. By establishing automated priority weighting (categorizing issues into Emergency, High, Medium, and Low), maintenance depots resolved high-severity electrical and plumbing failures 64\% faster than unranked queues. Their research highlighted the mathematical necessity of automated SLA timers in preventing ticket stagnation.
 
-T. Chen and L. Wang (2023) analyzed lightweight embedded relational databases versus distributed NoSQL document stores for institutional administrative tools. Their benchmark demonstrated that SQLite configured with Write-Ahead Logging (WAL) delivers superior read-write transactional performance, zero configuration overhead, and deterministic ACID guarantees for concurrent campus user loads up to 5,000 active sessions, making it highly advantageous over resource-intensive distributed database clusters for localized departmental applications.
+T. Chen and L. Wang~\cite{chen2023} analyzed lightweight embedded relational databases versus distributed NoSQL document stores for institutional administrative tools. Their benchmark demonstrated that SQLite configured with Write-Ahead Logging (WAL) delivers superior read-write transactional performance, zero configuration overhead, and deterministic ACID guarantees for concurrent campus user loads up to 5,000 active sessions, making it highly advantageous over resource-intensive distributed database clusters for localized departmental applications.
 
-J. Nielsen and B. Budiu (2022) outlined usability heuristics for institutional administrative portals, demonstrating that purpose-driven, single-purpose interfaces tailored for specific user personas (e.g., separate logins for students, managers, and field staff) achieve substantially higher user adoption and lower operational error rates compared to unified multi-tab dashboards.
+J. Nielsen and B. Budiu~\cite{nielsen2022} outlined usability heuristics for institutional administrative portals, demonstrating that purpose-driven, single-purpose interfaces tailored for specific user personas (e.g., separate logins for students, managers, and field staff) achieve substantially higher user adoption and lower operational error rates compared to unified multi-tab dashboards.
 
 \section{Research Gap}
 \hspace{0.5cm}Despite extensive prior research into enterprise ticketing and grievance logging, significant research and technical gaps persist in collegiate residential hostel environments:
@@ -554,7 +555,7 @@ The proposed system delivers substantial operational advantages:
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.9\textwidth]{images/architecture_diagram.png}
+ \includegraphics[width=0.9\textwidth]{architecture_diagram.png}
  \caption{\textbf{Multi-Tier System Architecture Diagram}}
 \end{figure}
 
@@ -574,7 +575,7 @@ As illustrated in Figure 4.1, the system is organized into three distinct, speci
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.95\textwidth]{images/dfd_diagram.png}
+ \includegraphics[width=0.95\textwidth]{dfd_diagram.png}
  \caption{\textbf{Data Flow Diagram (Level 1) - Complaint Lifecycle}}
 \end{figure}
 
@@ -586,7 +587,7 @@ Figure 4.2 illustrates the Level 1 DFD. External entities (Student Resident, War
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.85\textwidth]{images/use_case_diagram.png}
+ \includegraphics[width=0.85\textwidth]{use_case_diagram.png}
  \caption{\textbf{UML Use Case Diagram}}
 \end{figure}
 
@@ -603,7 +604,7 @@ Figure 4.3 outlines the system use cases across the three primary actors:
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.95\textwidth]{images/class_diagram.png}
+ \includegraphics[width=0.95\textwidth]{class_diagram.png}
  \caption{\textbf{UML Class Diagram}}
 \end{figure}
 
@@ -616,7 +617,7 @@ The abstract base class \texttt{User} encapsulates shared identity attributes an
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.95\textwidth]{images/sequence_diagram.png}
+ \includegraphics[width=0.95\textwidth]{sequence_diagram.png}
  \caption{\textbf{UML Sequence Diagram}}
 \end{figure}
 
@@ -628,7 +629,7 @@ Figure 4.5 traces the 14-step chronological execution flow: (1-2) Student submit
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.90\textwidth]{images/collaboration_diagram.png}
+ \includegraphics[width=0.90\textwidth]{collaboration_diagram.png}
  \caption{\textbf{UML Collaboration Diagram}}
 \end{figure}
 
@@ -640,7 +641,7 @@ Figure 4.6 demonstrates communication links between the runtime objects: \texttt
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.90\textwidth]{images/activity_diagram.png}
+ \includegraphics[width=0.90\textwidth]{activity_diagram.png}
  \caption{\textbf{UML Activity Diagram}}
 \end{figure}
 
@@ -775,7 +776,7 @@ END FUNCTION
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.88\textwidth]{images/input_design.png}
+ \includegraphics[width=0.88\textwidth]{input_design.png}
  \caption{\textbf{Input Design: Student Grievance Submission Interface}}
 \end{figure}
 
@@ -784,7 +785,7 @@ END FUNCTION
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.88\textwidth]{images/output_design.png}
+ \includegraphics[width=0.88\textwidth]{output_design.png}
  \caption{\textbf{Output Design: Warden Triage \& Dispatch Console}}
 \end{figure}
 
@@ -891,13 +892,13 @@ Student Satisfaction Score & 38.0\% & 92.5\% \\
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.88\textwidth]{images/comparative_graph.png}
+ \includegraphics[width=0.88\textwidth]{comparative_graph.png}
  \caption{\textbf{Performance Comparison: Manual vs. Digital System}}
 \end{figure}
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.88\textwidth]{images/sla_graph.png}
+ \includegraphics[width=0.88\textwidth]{sla_graph.png}
  \caption{\textbf{Resolution Time by Category vs. Target SLA}}
 \end{figure}
 
@@ -1018,7 +1019,7 @@ SDG 16 & Peace, Justice and Strong Institutions & Delivers transparent, auditabl
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.82\textwidth]{images/plagiarism_report.png}
+ \includegraphics[width=0.82\textwidth]{plagiarism_report.png}
  \caption{\textbf{Official Academic Plagiarism and Similarity Evaluation Summary Certificate}}
 \end{figure}
 
@@ -1041,24 +1042,44 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(
+    '/uploads',
+    express.static(path.join(__dirname, 'uploads'))
+);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
-    res.json({ status: 'healthy', timestamp: new Date().toISOString() });
+    res.json({
+        status: 'healthy',
+        timestamp: new Date().toISOString()
+    });
 });
 
 // Student Complaint Submission
 app.post('/api/complaints', (req, res) => {
     try {
-        const { student_id, title, description, category, photo_url, is_urgent } = req.body;
+        const {
+            student_id, title,
+            description, category,
+            photo_url, is_urgent
+        } = req.body;
+
         if (!student_id || !title || !category) {
-            return res.status(400).json({ error: 'Mandatory fields missing' });
+            return res.status(400).json({
+                error: 'Mandatory fields missing'
+            });
         }
+
         const priority = is_urgent ? 'HIGH' : 'NORMAL';
         const newTicket = db.createComplaint({
-            student_id, title, description, category, photo_url, priority
+            student_id,
+            title,
+            description,
+            category,
+            photo_url,
+            priority
         });
+
         res.status(201).json(newTicket);
     } catch (err) {
         res.status(500).json({ error: err.message });
@@ -1070,7 +1091,9 @@ app.put('/api/complaints/:id/dispatch', (req, res) => {
     try {
         const { id } = req.params;
         const { staff_id, priority, notes } = req.body;
-        const updated = db.dispatchComplaint(id, staff_id, priority, notes);
+        const updated = db.dispatchComplaint(
+            id, staff_id, priority, notes
+        );
         res.json(updated);
     } catch (err) {
         res.status(500).json({ error: err.message });
@@ -1078,7 +1101,7 @@ app.put('/api/complaints/:id/dispatch', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Hostel Complaint Server listening on Port ${PORT}`);
+    console.log(`Hostel Complaint Server listening on Port `);
 });
 \end{lstlisting}
 
@@ -1087,7 +1110,10 @@ app.listen(PORT, () => {
 const Database = require('better-sqlite3');
 const path = require('path');
 
-const db = new Database(path.join(__dirname, 'data', 'hostel.db'));
+const db = new Database(
+    path.join(__dirname, 'data', 'hostel.db')
+);
+
 // Enable Write-Ahead Logging for high concurrency
 db.pragma('journal_mode = WAL');
 
@@ -1121,15 +1147,32 @@ db.exec(`
 module.exports = {
     createComplaint: (data) => {
         const stmt = db.prepare(`
-            INSERT INTO complaints (student_id, title, description, category, priority, photo_url)
-            VALUES (?, ?, ?, ?, ?, ?)
+            INSERT INTO complaints (
+                student_id, title, description,
+                category, priority, photo_url
+            ) VALUES (?, ?, ?, ?, ?, ?)
         `);
-        const info = stmt.run(data.student_id, data.title, data.description, data.category, data.priority, data.photo_url);
-        return { id: info.lastInsertRowid, ...data, status: 'PENDING' };
+        const info = stmt.run(
+            data.student_id,
+            data.title,
+            data.description,
+            data.category,
+            data.priority,
+            data.photo_url
+        );
+        return {
+            id: info.lastInsertRowid,
+            ...data,
+            status: 'PENDING'
+        };
     },
     dispatchComplaint: (id, staffId, priority, notes) => {
         const stmt = db.prepare(`
-            UPDATE complaints SET assigned_staff_id = ?, priority = ?, status = 'ASSIGNED' WHERE id = ?
+            UPDATE complaints
+            SET assigned_staff_id = ?,
+                priority = ?,
+                status = 'ASSIGNED'
+            WHERE id = ?
         `);
         stmt.run(staffId, priority, id);
         return { id, status: 'ASSIGNED' };
