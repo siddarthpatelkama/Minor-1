@@ -59,8 +59,8 @@ export const DirectoryModal: React.FC<DirectoryModalProps> = ({ isOpen, onClose 
             <div className="space-y-2">
               <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                 <div>
-                  <h5 className="font-bold text-slate-900">Dr. K. Ramanathan, Ph.D.</h5>
-                  <p className="text-[11px] text-slate-500">Hostel Warden • Estate Oversight</p>
+                  <h5 className="font-bold text-slate-900">Dr. S. Mohan, Ph.D.</h5>
+                  <p className="text-[11px] text-slate-500">Chief Hostel Warden • Estate Oversight</p>
                 </div>
                 <div className="text-right">
                   <p className="font-mono font-bold text-slate-800">+91 94440 12345</p>

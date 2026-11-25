@@ -97,7 +97,7 @@ export const WardenLogin: React.FC<WardenLoginProps> = ({ onBack, onNavigate }) 
                 }}
                 className="w-full p-2.5 rounded-lg bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-900 font-semibold text-xs flex items-center justify-between transition"
               >
-                <span>Dr. K. Ramanathan (Hostel Warden)</span>
+                <span>Dr. S. Mohan (Chief Hostel Warden)</span>
                 <span className="text-[10px] text-blue-700 font-mono">chiefwarden@veltech.edu.in</span>
               </button>
             </div>

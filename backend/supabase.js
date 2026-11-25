@@ -283,7 +283,7 @@ const SupabaseService = {
       id: `hist-${Date.now()}`,
       complaint_id: id,
       status: 'Assigned',
-      updated_by: wardenName || 'Dr. S. Manohar',
+      updated_by: wardenName || 'Dr. S. Mohan',
       updated_by_role: 'warden',
       remarks,
       timestamp

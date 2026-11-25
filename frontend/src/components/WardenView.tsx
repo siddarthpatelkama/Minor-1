@@ -78,7 +78,7 @@ export const WardenView: React.FC = () => {
       setAssigning(true);
       await api.assignComplaint(assignModalComplaint.id, {
         staffId: selectedStaffId,
-        wardenName: currentUser?.name || 'Dr. K. Ramanathan (Hostel Warden)',
+        wardenName: currentUser?.name || 'Dr. S. Mohan (Chief Hostel Warden)',
         notes: assignNotes
       });
       setAssignModalComplaint(null);

@@ -266,7 +266,7 @@ export const api = {
         resolvedAt: '',
         statusHistory: [
           { id: 'hist-01', complaintId: 'VT-CMP-1001', status: 'Pending', updatedBy: 'K. Siddarth Patel', updatedByRole: 'student', timestamp: '2026-10-13T03:26:21Z', remarks: 'Maintenance submitted with Emergency priority due to fire risk' },
-          { id: 'hist-02', complaintId: 'VT-CMP-1001', status: 'Assigned', updatedBy: 'Dr. K. Ramanathan', updatedByRole: 'warden', timestamp: '2026-10-13T07:26:21Z', remarks: 'Dispatched Ramesh Kumar (Electrician) for immediate inspection' },
+          { id: 'hist-02', complaintId: 'VT-CMP-1001', status: 'Assigned', updatedBy: 'Dr. S. Mohan', updatedByRole: 'warden', timestamp: '2026-10-13T07:26:21Z', remarks: 'Dispatched Ramesh Kumar (Electrician) for immediate inspection' },
           { id: 'hist-03', complaintId: 'VT-CMP-1001', status: 'In Progress', updatedBy: 'Ramesh Kumar', updatedByRole: 'staff', timestamp: '2026-10-13T09:26:21Z', remarks: 'Arrived at Block A with replacement switchboard modular unit' }
         ]
       },
@@ -295,7 +295,7 @@ export const api = {
         resolvedAt: '',
         statusHistory: [
           { id: 'hist-04', complaintId: 'VT-CMP-1002', status: 'Pending', updatedBy: 'Ramsetty Sreevasthav', updatedByRole: 'student', timestamp: '2026-10-13T00:26:21Z', remarks: 'Geyser leaking issue filed' },
-          { id: 'hist-05', complaintId: 'VT-CMP-1002', status: 'Assigned', updatedBy: 'Dr. K. Ramanathan', updatedByRole: 'warden', timestamp: '2026-10-13T06:26:21Z', remarks: 'Assigned to Sundar Raj (Plumber) for pipe fitting replacement' }
+          { id: 'hist-05', complaintId: 'VT-CMP-1002', status: 'Assigned', updatedBy: 'Dr. S. Mohan', updatedByRole: 'warden', timestamp: '2026-10-13T06:26:21Z', remarks: 'Assigned to Sundar Raj (Plumber) for pipe fitting replacement' }
         ]
       },
       {
@@ -323,7 +323,7 @@ export const api = {
         resolvedAt: '2026-10-12T10:26:21.027682+00:00',
         statusHistory: [
           { id: 'hist-06', complaintId: 'VT-CMP-1003', status: 'Pending', updatedBy: 'A. Rakesh', updatedByRole: 'student', timestamp: '2026-10-10T10:26:21Z', remarks: 'Tap leaking reported' },
-          { id: 'hist-07', complaintId: 'VT-CMP-1003', status: 'Assigned', updatedBy: 'Dr. K. Ramanathan', updatedByRole: 'warden', timestamp: '2026-10-11T10:26:21Z', remarks: 'Assigned to plumbing staff' },
+          { id: 'hist-07', complaintId: 'VT-CMP-1003', status: 'Assigned', updatedBy: 'Dr. S. Mohan', updatedByRole: 'warden', timestamp: '2026-10-11T10:26:21Z', remarks: 'Assigned to plumbing staff' },
           { id: 'hist-08', complaintId: 'VT-CMP-1003', status: 'Resolved', updatedBy: 'Sundar Raj', updatedByRole: 'staff', timestamp: '2026-10-12T10:26:21Z', remarks: 'Washer replaced and test passed' }
         ],
         feedback: {
