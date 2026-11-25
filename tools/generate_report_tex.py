@@ -12,8 +12,6 @@ content = r'''\documentclass[10pt]{report}
 \usepackage{amsmath,amssymb}
 \chapterfont{\centering}
 \usepackage{enumitem}
-\usepackage{inconsolata}
-\usepackage{upquote}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{ragged2e}
@@ -25,11 +23,6 @@ content = r'''\documentclass[10pt]{report}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 \definecolor{velmaroon}{RGB}{96, 0, 0}
 \definecolor{navyblue}{RGB}{21, 101, 192}
-\definecolor{codebg}{RGB}{250, 250, 252}
-\definecolor{codeborder}{RGB}{215, 220, 228}
-\definecolor{keywordblue}{RGB}{0, 68, 170}
-\definecolor{stringgreen}{RGB}{40, 140, 40}
-\definecolor{commentgray}{RGB}{120, 120, 120}
 
 \makeatletter
 \def\@makechapterhead#1{%
@@ -52,41 +45,29 @@ content = r'''\documentclass[10pt]{report}
   }}
 \makeatother
 
-\lstdefinelanguage{JavaScript}{
-  keywords={const, let, var, function, return, if, else, try, catch, async, await, new, require, true, false, null, undefined, module, exports},
-  keywordstyle=\color{keywordblue}\bfseries,
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  ndkeywordstyle=\color{keywordblue}\bfseries,
-  identifierstyle=\color{black},
-  sensitive=true,
-  comment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  commentstyle=\color{commentgray}\itshape,
-  stringstyle=\color{stringgreen},
-  morestring=[b]',
-  morestring=[b]"
-}
-
 \lstset{
-  language=JavaScript,
-  backgroundcolor=\color{codebg},
-  basicstyle=\ttfamily\scriptsize\linespread{1.0}\selectfont,
-  columns=fullflexible,
-  keepspaces=true,
-  showstringspaces=false,
-  showspaces=false,
-  showtabs=false,
-  numbers=left,
-  numberstyle=\tiny\color{commentgray},
-  stepnumber=1,
-  numbersep=8pt,
-  frame=single,
-  rulecolor=\color{codeborder},
-  tabsize=2,
-  captionpos=b,
-  breaklines=true,
-  breakatwhitespace=true,
-  escapeinside={\%*}{*)}
+ language=Java,
+ basicstyle=\footnotesize\ttfamily,
+ numbers=left,
+ numberstyle=\tiny\color{gray},
+ stepnumber=1,
+ numbersep=5pt,
+ backgroundcolor=\color{white},
+ showspaces=false,
+ showstringspaces=false,
+ showtabs=false,
+ frame=single,
+ rulecolor=\color{black},
+ tabsize=2,
+ captionpos=b,
+ breaklines=true,
+ breakatwhitespace=false,
+ title=\lstname,
+ keywordstyle=\color{blue}\bfseries,
+ commentstyle=\color{gray}\itshape,
+ stringstyle=\color{mauve},
+ escapeinside={\%*}{*)},
+ morekeywords={*,const,let,var,async,await,function,import,from,export,default}
 }
 
 \geometry{a4paper,total={180mm,250mm},left=20mm,top=20mm, right=20mm}
@@ -1034,7 +1015,7 @@ SDG 16 & Peace, Justice and Strong Institutions & Delivers transparent, auditabl
 \section{Source Code}
 
 \subsection{Backend Express REST API Controller (\texttt{server.js})}
-\begin{lstlisting}[language=JavaScript, caption={Express REST API Server Implementation}]
+\begin{lstlisting}[language=Java, caption={Express REST API Server Implementation}]
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -1045,10 +1026,9 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
-app.use(
-    '/uploads',
-    express.static(path.join(__dirname, 'uploads'))
-);
+app.use('/uploads', express.static(
+    path.join(__dirname, 'uploads')
+));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
@@ -1075,12 +1055,9 @@ app.post('/api/complaints', (req, res) => {
 
         const priority = is_urgent ? 'HIGH' : 'NORMAL';
         const newTicket = db.createComplaint({
-            student_id,
-            title,
-            description,
-            category,
-            photo_url,
-            priority
+            student_id, title,
+            description, category,
+            photo_url, priority
         });
 
         res.status(201).json(newTicket);
@@ -1104,12 +1081,12 @@ app.put('/api/complaints/:id/dispatch', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Hostel Complaint Server listening on Port `);
+    console.log(`Hostel Complaint Server listening on Port ${PORT}`);
 });
 \end{lstlisting}
 
 \subsection{Database SQLite Client \& Query Layer (\texttt{database.js})}
-\begin{lstlisting}[language=JavaScript, caption={SQLite Transactional Data Access Client}]
+\begin{lstlisting}[language=Java, caption={SQLite Transactional Data Access Client}]
 const Database = require('better-sqlite3');
 const path = require('path');
 
@@ -1156,12 +1133,9 @@ module.exports = {
             ) VALUES (?, ?, ?, ?, ?, ?)
         `);
         const info = stmt.run(
-            data.student_id,
-            data.title,
-            data.description,
-            data.category,
-            data.priority,
-            data.photo_url
+            data.student_id, data.title,
+            data.description, data.category,
+            data.priority, data.photo_url
         );
         return {
             id: info.lastInsertRowid,
@@ -1183,7 +1157,6 @@ module.exports = {
 };
 \end{lstlisting}
 
-% =========================================================================
 % REFERENCES
 % =========================================================================
 \addcontentsline{toc}{chapter}{References}
