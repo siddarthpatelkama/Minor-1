@@ -57,67 +57,69 @@ export async function getSupabaseSession() {
 export async function syncGoogleUser(session: any): Promise<User | null> {
   if (!session?.user) return null;
 
-  const email = session.user.email || '';
+  const email = (session.user.email || '').toLowerCase().trim();
+  const vtuPrefix = email.includes('@') ? email.split('@')[0].toUpperCase() : '';
   const fullName = session.user.user_metadata?.full_name || 
                    session.user.user_metadata?.name || 
-                   (email ? email.split('@')[0] : 'Google Student');
+                   (vtuPrefix || 'Google Student');
   const avatar = session.user.user_metadata?.avatar_url || 
                  session.user.user_metadata?.picture || 
                  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150';
 
   try {
     // Check if user already exists in public.users table in Supabase
+    // Match by exact email, alt_email, or institutional VTU prefix (e.g. VTU28319)
+    let orQuery = `email.ilike.${email}`;
+    if (vtuPrefix) {
+      orQuery += `,vtu_no.ilike.${vtuPrefix},alt_email.ilike.${email}`;
+    }
+
     const { data: existingUser, error: selectError } = await supabase
       .from('users')
       .select('*')
-      .eq('email', email)
+      .or(orQuery)
       .maybeSingle();
 
     if (existingUser && !selectError) {
       return {
         id: existingUser.id,
         name: existingUser.name || fullName,
-        email: existingUser.email,
+        email: existingUser.email || email,
         role: (existingUser.role || 'student') as any,
-        vtuNo: existingUser.vtu_no || existingUser.reg_no || email.split('@')[0].toUpperCase(),
-        regNo: existingUser.reg_no || existingUser.vtu_no || email.split('@')[0].toUpperCase(),
+        vtuNo: existingUser.vtu_no || existingUser.reg_no || vtuPrefix,
+        regNo: existingUser.reg_no || existingUser.vtu_no || vtuPrefix,
         block: existingUser.block || 'Block A (Boys Hostel)',
         roomNo: existingUser.room_no || 'A-201',
         phone: existingUser.phone || '+91 98765 43210',
-        avatar: existingUser.avatar || avatar
+        avatar: avatar || existingUser.avatar
       };
     }
 
-    // New Google resident: auto-generate institutional student record
-    const randomVtu = 'VTU' + Math.floor(28000 + Math.random() * 2000);
+    // New resident: resolve VTU number
+    const finalVtu = vtuPrefix.startsWith('VTU') ? vtuPrefix : ('VTU' + Math.floor(28000 + Math.random() * 2000));
     const newUserRecord = {
       id: session.user.id,
       name: fullName,
       email: email,
+      alt_email: email,
       role: 'student',
-      vtu_no: randomVtu,
-      reg_no: randomVtu,
+      vtu_no: finalVtu,
+      reg_no: finalVtu,
       block: 'Block A (Boys Hostel)',
       room_no: 'A-204',
       phone: '+91 98765 43210',
       password: 'oauth_authenticated'
     };
 
-    const { error: insertError } = await supabase
-      .from('users')
-      .upsert(newUserRecord);
-
-    if (insertError) {
-      console.warn('Could not upsert student to Supabase table:', insertError.message);
-    }
+    await supabase.from('users').upsert(newUserRecord);
 
     return {
       id: session.user.id,
       name: fullName,
       email: email,
       role: 'student',
-      vtuNo: randomVtu,
-      regNo: randomVtu,
+      vtuNo: finalVtu,
+      regNo: finalVtu,
       block: 'Block A (Boys Hostel)',
       roomNo: 'A-204',
       phone: '+91 98765 43210',
@@ -125,14 +127,13 @@ export async function syncGoogleUser(session: any): Promise<User | null> {
     };
   } catch (err) {
     console.error('Error syncing Google user with database:', err);
-    // Safe offline fallback object
     return {
       id: session.user.id,
       name: fullName,
       email: email,
       role: 'student',
-      vtuNo: 'VTU-GOOGLE',
-      regNo: 'VTU-GOOGLE',
+      vtuNo: vtuPrefix || 'VTU28319',
+      regNo: vtuPrefix || 'VTU28319',
       block: 'Block A (Boys Hostel)',
       roomNo: 'A-201',
       phone: '+91 98765 43210',

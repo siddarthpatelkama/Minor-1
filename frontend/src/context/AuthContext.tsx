@@ -42,7 +42,36 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setUsers(allUsers);
       setStaffList(allStaff);
 
-      // Check if active Supabase session exists (e.g. from Google OAuth redirect)
+      // 1. Immediately parse OAuth tokens from URL hash if redirected back from Google
+      const hash = window.location.hash;
+      if (hash && hash.includes('access_token')) {
+        try {
+          const hashParams = new URLSearchParams(hash.replace(/^#/, ''));
+          const accessToken = hashParams.get('access_token');
+          const refreshToken = hashParams.get('refresh_token');
+          if (accessToken) {
+            const { data } = await supabase.auth.setSession({
+              access_token: accessToken,
+              refresh_token: refreshToken || ''
+            });
+            if (data?.session?.user) {
+              const googleUser = await syncGoogleUser(data.session);
+              if (googleUser) {
+                saveUserSession(googleUser);
+                try {
+                  window.history.replaceState({}, document.title, window.location.pathname);
+                } catch {}
+                setLoading(false);
+                return;
+              }
+            }
+          }
+        } catch (hashErr) {
+          console.warn('Hash token extraction warning:', hashErr);
+        }
+      }
+
+      // 2. Check if active Supabase session exists
       const session = await getSupabaseSession();
       if (session?.user) {
         const googleUser = await syncGoogleUser(session);
@@ -53,7 +82,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
       }
 
-      // Restore saved local storage session if present
+      // 3. Restore saved local storage session if present
       const savedUser = localStorage.getItem('veltech_user');
       if (savedUser) {
         try {
@@ -81,10 +110,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     // Listen to Supabase Auth state changes (OAuth login, signout, token refresh)
     const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) => {
-      if ((event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') && session?.user) {
+      if ((event === 'SIGNED_IN' || event === 'INITIAL_SESSION' || event === 'TOKEN_REFRESHED') && session?.user) {
         const studentUser = await syncGoogleUser(session);
         if (studentUser) {
           saveUserSession(studentUser);
+          if (window.location.hash.includes('access_token')) {
+            try {
+              window.history.replaceState({}, document.title, window.location.pathname);
+            } catch {}
+          }
         }
       } else if (event === 'SIGNED_OUT') {
         localStorage.removeItem('veltech_user');
