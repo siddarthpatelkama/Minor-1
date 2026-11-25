@@ -293,7 +293,7 @@ if (complaintCount === 0) {
       updated_at: new Date(Date.now() - 3600000 * 1).toISOString(),
       resolved_at: null,
       history: [
-        { id: 'hist-01', status: 'Pending', updated_by: 'K. Siddarth Patel', updated_by_role: 'student', remarks: 'Grievance submitted with Emergency priority due to fire risk', timestamp: new Date(Date.now() - 3600000 * 7).toISOString() },
+        { id: 'hist-01', status: 'Pending', updated_by: 'K. Siddarth Patel', updated_by_role: 'student', remarks: 'Maintenance request submitted with Emergency priority due to fire risk', timestamp: new Date(Date.now() - 3600000 * 7).toISOString() },
         { id: 'hist-02', status: 'Assigned', updated_by: 'Dr. S. Mohan', updated_by_role: 'warden', remarks: 'Dispatched Ramesh Kumar (Electrician) for immediate inspection', timestamp: new Date(Date.now() - 3600000 * 3).toISOString() },
         { id: 'hist-03', status: 'In Progress', updated_by: 'Ramesh Kumar', updated_by_role: 'staff', remarks: 'Arrived at Block A with replacement switchboard modular unit', timestamp: new Date(Date.now() - 3600000 * 1).toISOString() }
       ]
@@ -677,7 +677,7 @@ const sqliteMethods = {
       `hist-${Date.now()}`,
       complaintId,
       data.studentName,
-      `Grievance registered: ${data.title}`,
+      `Maintenance request registered: ${data.title}`,
       timestamp
     );
 

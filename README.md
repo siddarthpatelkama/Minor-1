@@ -21,7 +21,7 @@ The system is built as a production-grade, multi-tier web application adhering t
    - Modern React 18 with TypeScript and Vite.
    - Professional Institutional UI with official Vel Tech branding (Maroon `#600000`, white cards, clean typography).
    - **Dedicated, Separate Login Pages** for:
-     - 🎓 **Student Residents** (`/student-login`) with room registration and grievance tracking.
+     - 🎓 **Student Residents** (`/student-login`) with room registration and maintenance complaint tracking.
      - 🏛️ **Warden Administration** (`/warden-login`) with campus-wide triage and dispatch controls.
      - 🛠️ **Department Maintenance Depot** (`/department-login`) with trade switchers (Electrical, Plumbing, Carpentry, Network, Housekeeping).
    - Real incident photo evidence (Burnt switchboard, leaking geyser, corroded dripping tap).

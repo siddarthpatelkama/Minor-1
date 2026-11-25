@@ -250,7 +250,7 @@ const SupabaseService = {
       status: 'Pending',
       updated_by: data.studentName || 'Student',
       updated_by_role: 'student',
-      remarks: `Grievance registered: ${data.title}`,
+      remarks: `Maintenance request registered: ${data.title}`,
       timestamp
     });
 
