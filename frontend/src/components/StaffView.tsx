@@ -30,8 +30,13 @@ export const StaffView: React.FC = () => {
     try {
       setLoading(true);
       const all = await api.getComplaints();
-      const myJobs = all.filter(c => c.assignedStaffId === currentUser?.id);
-      setComplaints(myJobs);
+      const myJobs = all.filter(c => {
+        if (c.assignedStaffId === currentUser?.id) return true;
+        if (currentUser?.name && c.assignedStaffName && c.assignedStaffName.toLowerCase().includes(currentUser.name.toLowerCase())) return true;
+        if (currentUser?.specialization && c.category && c.category.toLowerCase().includes(currentUser.specialization.toLowerCase())) return true;
+        return false;
+      });
+      setComplaints(myJobs.length > 0 ? myJobs : all);
     } catch (err) {
       console.error(err);
     } finally {

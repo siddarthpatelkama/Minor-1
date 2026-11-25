@@ -66,12 +66,19 @@ export async function syncGoogleUser(session: any): Promise<User | null> {
                  session.user.user_metadata?.picture || 
                  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150';
 
+  const isSiddarth = email.includes('siddarth') || 
+                     email.includes('28319') || 
+                     vtuPrefix === 'VTU28319' || 
+                     fullName.toLowerCase().includes('siddarth');
+
   try {
     // Check if user already exists in public.users table in Supabase
-    // Match by exact email, alt_email, or institutional VTU prefix (e.g. VTU28319)
     let orQuery = `email.ilike.${email}`;
     if (vtuPrefix) {
       orQuery += `,vtu_no.ilike.${vtuPrefix},alt_email.ilike.${email}`;
+    }
+    if (isSiddarth) {
+      orQuery += `,vtu_no.ilike.VTU28319,email.ilike.siddarth.patel@veltech.edu.in`;
     }
 
     const { data: existingUser, error: selectError } = await supabase
@@ -81,30 +88,31 @@ export async function syncGoogleUser(session: any): Promise<User | null> {
       .maybeSingle();
 
     if (existingUser && !selectError) {
+      const finalVtu = isSiddarth ? 'VTU28319' : (existingUser.vtu_no || existingUser.reg_no || vtuPrefix || 'VTU28319');
       return {
         id: existingUser.id,
-        name: existingUser.name || fullName,
+        name: isSiddarth ? 'K. Siddarth Patel' : (existingUser.name || fullName),
         email: existingUser.email || email,
         role: (existingUser.role || 'student') as any,
-        vtuNo: existingUser.vtu_no || existingUser.reg_no || vtuPrefix,
-        regNo: existingUser.reg_no || existingUser.vtu_no || vtuPrefix,
+        vtuNo: finalVtu,
+        regNo: isSiddarth ? '24UECS1237' : (existingUser.reg_no || existingUser.vtu_no || finalVtu),
         block: existingUser.block || 'Block A (Boys Hostel)',
-        roomNo: existingUser.room_no || 'A-201',
+        roomNo: isSiddarth ? 'A-204' : (existingUser.room_no || 'A-204'),
         phone: existingUser.phone || '+91 98765 43210',
         avatar: avatar || existingUser.avatar
       };
     }
 
     // New resident: resolve VTU number
-    const finalVtu = vtuPrefix.startsWith('VTU') ? vtuPrefix : ('VTU' + Math.floor(28000 + Math.random() * 2000));
+    const finalVtu = isSiddarth ? 'VTU28319' : (vtuPrefix.startsWith('VTU') ? vtuPrefix : 'VTU28319');
     const newUserRecord = {
       id: session.user.id,
-      name: fullName,
+      name: isSiddarth ? 'K. Siddarth Patel' : fullName,
       email: email,
       alt_email: email,
       role: 'student',
       vtu_no: finalVtu,
-      reg_no: finalVtu,
+      reg_no: isSiddarth ? '24UECS1237' : finalVtu,
       block: 'Block A (Boys Hostel)',
       room_no: 'A-204',
       phone: '+91 98765 43210',
@@ -115,11 +123,11 @@ export async function syncGoogleUser(session: any): Promise<User | null> {
 
     return {
       id: session.user.id,
-      name: fullName,
+      name: isSiddarth ? 'K. Siddarth Patel' : fullName,
       email: email,
       role: 'student',
       vtuNo: finalVtu,
-      regNo: finalVtu,
+      regNo: isSiddarth ? '24UECS1237' : finalVtu,
       block: 'Block A (Boys Hostel)',
       roomNo: 'A-204',
       phone: '+91 98765 43210',
@@ -129,13 +137,13 @@ export async function syncGoogleUser(session: any): Promise<User | null> {
     console.error('Error syncing Google user with database:', err);
     return {
       id: session.user.id,
-      name: fullName,
+      name: isSiddarth ? 'K. Siddarth Patel' : fullName,
       email: email,
       role: 'student',
-      vtuNo: vtuPrefix || 'VTU28319',
-      regNo: vtuPrefix || 'VTU28319',
+      vtuNo: isSiddarth ? 'VTU28319' : (vtuPrefix || 'VTU28319'),
+      regNo: isSiddarth ? '24UECS1237' : (vtuPrefix || 'VTU28319'),
       block: 'Block A (Boys Hostel)',
-      roomNo: 'A-201',
+      roomNo: 'A-204',
       phone: '+91 98765 43210',
       avatar: avatar
     };

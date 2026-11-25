@@ -78,7 +78,7 @@ export const WardenView: React.FC = () => {
       setAssigning(true);
       await api.assignComplaint(assignModalComplaint.id, {
         staffId: selectedStaffId,
-        wardenName: currentUser?.name || 'Chief Warden Dr. S. Manohar',
+        wardenName: currentUser?.name || 'Dr. K. Ramanathan (Hostel Warden)',
         notes: assignNotes
       });
       setAssignModalComplaint(null);
@@ -91,14 +91,16 @@ export const WardenView: React.FC = () => {
   };
 
   const filtered = complaints.filter(c => {
+    const sLower = search.toLowerCase();
     const matchesSearch = 
-      c.title.toLowerCase().includes(search.toLowerCase()) ||
-      c.studentName.toLowerCase().includes(search.toLowerCase()) ||
-      c.studentVtu.toLowerCase().includes(search.toLowerCase()) ||
-      c.roomNo.toLowerCase().includes(search.toLowerCase());
+      (c.title || '').toLowerCase().includes(sLower) ||
+      (c.studentName || '').toLowerCase().includes(sLower) ||
+      (c.studentVtu || '').toLowerCase().includes(sLower) ||
+      (c.roomNo || '').toLowerCase().includes(sLower) ||
+      (c.id || '').toLowerCase().includes(sLower);
     
-    const matchesStatus = statusFilter === 'All' || c.status.toLowerCase() === statusFilter.toLowerCase();
-    const matchesBlock = blockFilter === 'All' || c.block.toLowerCase().includes(blockFilter.toLowerCase());
+    const matchesStatus = statusFilter === 'All' || (c.status || '').toLowerCase() === statusFilter.toLowerCase();
+    const matchesBlock = blockFilter === 'All' || (c.block || '').toLowerCase().includes(blockFilter.toLowerCase());
     const matchesHazard = onlyHazards ? c.priority === 'Emergency' : true;
 
     return matchesSearch && matchesStatus && matchesBlock && matchesHazard;

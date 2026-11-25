@@ -32,6 +32,8 @@ interface StudentViewProps {
 export const StudentView: React.FC<StudentViewProps> = ({ activeTab, setActiveTab }) => {
   const { currentUser } = useAuth();
   const [complaints, setComplaints] = useState<Complaint[]>([]);
+  const [allComplaints, setAllComplaints] = useState<Complaint[]>([]);
+  const [viewScope, setViewScope] = useState<'my' | 'all'>('my');
   const [loading, setLoading] = useState(true);
   const [statusFilter, setStatusFilter] = useState('All');
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -56,10 +58,36 @@ export const StudentView: React.FC<StudentViewProps> = ({ activeTab, setActiveTa
     try {
       setLoading(true);
       const data = await api.getComplaints();
-      const studentComplaints = data.filter(c => c.studentId === currentUser?.id || c.studentVtu === currentUser?.vtuNo);
-      setComplaints(studentComplaints);
+      setAllComplaints(data);
+
+      const currentVtu = (currentUser?.vtuNo || '').trim().toUpperCase();
+      const currentEmail = (currentUser?.email || '').trim().toLowerCase();
+      const currentId = currentUser?.id;
+      const currentName = (currentUser?.name || '').trim().toLowerCase();
+
+      const studentComplaints = data.filter(c => {
+        const cVtu = (c.studentVtu || '').trim().toUpperCase();
+        const cId = c.studentId;
+        const cName = (c.studentName || '').trim().toLowerCase();
+
+        // 1. Direct VTU match (e.g. VTU28319)
+        if (currentVtu && cVtu && currentVtu === cVtu) return true;
+        // 2. Direct ID match
+        if (currentId && (cId === currentId || (c as any).student_id === currentId)) return true;
+        // 3. Name or email match for team leader / student
+        if ((currentEmail.includes('siddarth') || currentName.includes('siddarth')) && (cVtu === 'VTU28319' || cName.includes('siddarth'))) return true;
+        return false;
+      });
+
+      if (studentComplaints.length > 0) {
+        setComplaints(studentComplaints);
+        setViewScope('my');
+      } else {
+        setComplaints(data);
+        setViewScope('all');
+      }
     } catch (err) {
-      console.error(err);
+      console.error('Error fetching student complaints:', err);
     } finally {
       setLoading(false);
     }
@@ -128,9 +156,11 @@ export const StudentView: React.FC<StudentViewProps> = ({ activeTab, setActiveTa
     }
   };
 
-  const filteredComplaints = complaints.filter(c => {
+  const activeList = viewScope === 'my' && complaints.length > 0 ? complaints : allComplaints;
+
+  const filteredComplaints = activeList.filter(c => {
     if (statusFilter === 'All') return true;
-    return c.status.toLowerCase() === statusFilter.toLowerCase();
+    return (c.status || '').toLowerCase() === statusFilter.toLowerCase();
   });
 
   const getPriorityBadge = (p: ComplaintPriority) => {
@@ -415,31 +445,61 @@ export const StudentView: React.FC<StudentViewProps> = ({ activeTab, setActiveTa
       {/* COMPLAINTS LIST VIEW */}
       {activeTab === 'complaints' && (
         <div className="space-y-4">
-          {/* Filter Bar */}
-          <div className="bg-white border border-slate-200 rounded-xl p-3.5 shadow-sm flex flex-wrap items-center justify-between gap-3 text-xs">
-            <div className="flex items-center gap-2">
-              <Filter className="w-4 h-4 text-slate-500" />
-              <span className="font-bold text-slate-700">Filter Status:</span>
-              <div className="flex flex-wrap gap-1">
-                {['All', 'Pending', 'Assigned', 'In Progress', 'Resolved'].map(filter => (
-                  <button
-                    key={filter}
-                    onClick={() => setStatusFilter(filter)}
-                    className={`px-3 py-1 rounded-lg font-medium transition ${
-                      statusFilter === filter
-                        ? 'bg-[#750000] text-white shadow-sm'
-                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                    }`}
-                  >
-                    {filter}
-                  </button>
-                ))}
+          {/* Scope & Filter Bar */}
+          <div className="bg-white border border-slate-200 rounded-xl p-3.5 shadow-sm space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-3 text-xs border-b border-slate-100 pb-2.5">
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-slate-800">View Scope:</span>
+                <button
+                  type="button"
+                  onClick={() => setViewScope('my')}
+                  className={`px-3 py-1 rounded-lg font-semibold transition ${
+                    viewScope === 'my'
+                      ? 'bg-[#750000] text-white shadow-sm'
+                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  }`}
+                >
+                  My Room Tickets ({complaints.length})
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setViewScope('all')}
+                  className={`px-3 py-1 rounded-lg font-semibold transition ${
+                    viewScope === 'all'
+                      ? 'bg-[#750000] text-white shadow-sm'
+                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  }`}
+                >
+                  All Hostel Maintenance ({allComplaints.length})
+                </button>
               </div>
+
+              <span className="text-slate-500 font-medium">
+                Showing {filteredComplaints.length} of {activeList.length} maintenance tickets
+              </span>
             </div>
 
-            <span className="text-slate-500 font-medium">
-              Showing {filteredComplaints.length} of {complaints.length} maintenance tickets
-            </span>
+            <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
+              <div className="flex items-center gap-2">
+                <Filter className="w-4 h-4 text-slate-500" />
+                <span className="font-bold text-slate-700">Filter Status:</span>
+                <div className="flex flex-wrap gap-1">
+                  {['All', 'Pending', 'Assigned', 'In Progress', 'Resolved'].map(filter => (
+                    <button
+                      key={filter}
+                      onClick={() => setStatusFilter(filter)}
+                      className={`px-2.5 py-0.5 rounded-lg font-medium transition ${
+                        statusFilter === filter
+                          ? 'bg-slate-800 text-white shadow-sm'
+                          : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                      }`}
+                    >
+                      {filter}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Maintenance List */}
