@@ -923,9 +923,10 @@ Figure 6.1 presents the quantitative comparison across four primary operational 
 
 \begin{table}[H]
 \centering
-\small
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|p{1.2cm}|p{2.8cm}|p{3.8cm}|p{1.8cm}|p{5.5cm}|}
+\footnotesize
+\linespread{1.0}\selectfont
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{|p{1.0cm}|p{2.6cm}|p{3.5cm}|p{1.7cm}|p{6.2cm}|}
 \hline
 \textbf{WP No.} & \textbf{Attribute} & \textbf{CEP Characteristics} & \textbf{Knowledge Profile} & \textbf{Justification based on Project} \\
 \hline
@@ -997,12 +998,12 @@ SDG 16 & Peace, Justice and Strong Institutions & Delivers transparent, auditabl
 % CHAPTER 9: PLAGIARISM REPORT
 % =========================================================================
 \chapter{PLAGIARISM REPORT}
-\linespread{1.5}
+\linespread{1.2}\selectfont
 \hspace{0.5cm}In strict adherence to the academic research policies of Vel Tech Rangarajan Dr. Sagunthala R\&D Institute of Science and Technology, this project report was subjected to comprehensive plagiarism evaluation. The evaluation confirmed an overall similarity index of \textbf{6\%}, fully complying with university regulations.
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.82\textwidth]{plagiarism_report.png}
+ \includegraphics[height=138mm,keepaspectratio]{plagiarism_report.png}
  \caption{\textbf{Official Academic Plagiarism and Similarity Evaluation Summary Certificate}}
 \end{figure}
 
